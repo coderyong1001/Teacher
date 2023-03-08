@@ -1,0 +1,6 @@
+<view class="add-contact-container">
+  <view class="common-title">填写信息</view>
+  <view class="common-warning">同一个单位、开同样发票的同伴</view>
+  <form-input stateKeys="{{stateKeys}}" id="form-input" defaultValue="{{defaultValue}}" showRequire="{{true}}" />
+  <btn btnText="保存" bind:tap="commit"/>
+</view>

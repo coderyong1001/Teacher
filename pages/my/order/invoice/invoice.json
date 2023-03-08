@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "开发票",
+  "usingComponents": {
+    "invoice-list": "/components/invoice-list/invoice-list",
+    "tab-control": "/components/tab-control/tab-control",
+    "paging": "/components/paging/paging"
+  },
+  "enablePullDownRefresh": true
+}

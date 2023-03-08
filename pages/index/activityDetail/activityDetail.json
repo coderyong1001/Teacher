@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "活动详情",
+  "usingComponents": {
+    "modal": "/components/modal/modal",
+    "back-my": "/components/back-my/back-my"
+  },
+  "enablePullDownRefresh": true
+}

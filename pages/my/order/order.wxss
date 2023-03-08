@@ -1,0 +1,87 @@
+.order-container {
+  padding-bottom: 292rpx;
+  position: relative;
+  padding-top: 108rpx;
+}
+.order-container .tab-control-box {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1;
+}
+.order-container .order-btn-box {
+  background-color: #f5f5f5;
+  padding: 30rpx 48rpx 0rpx 48rpx;
+  height: 292rpx;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.order-container .order-btn-box .invoice-btn-box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+.order-container .order-btn-box .invoice-btn-box .invoice-btn {
+  width: 312rpx;
+  height: 88rpx;
+  border-radius: 8px;
+  border: 1rpx solid #018389;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #018389;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.code-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  width: 100vw;
+  height: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000000;
+}
+.code-modal .code-warp {
+  width: 560rpx;
+  box-sizing: border-box;
+  height: 546rpx;
+  background: #ffffff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -280rpx;
+  margin-top: -273rpx;
+  border-radius: 8rpx;
+}
+.code-modal .code-img {
+  width: 304rpx;
+  height: 304rpx;
+  margin: 48rpx 128rpx 16rpx 128rpx;
+  display: block;
+  background: #aeaeae;
+}
+.code-sutext {
+  height: 44rpx;
+  font-size: 30rpx;
+  font-weight: 400;
+  color: #666666;
+  line-height: 44rpx;
+  text-align: center;
+  margin-bottom: 38rpx;
+}
+.code-confirm {
+  height: 96rpx;
+  line-height: 96rpx;
+  border-top: 1rpx solid #eeeeee;
+  font-size: 34rpx;
+  font-weight: 400;
+  color: #018389;
+  text-align: center;
+}

@@ -1,0 +1,9 @@
+/* pages/my/myContact/addContact/addContact.wxss */
+.add-contact-container {
+  padding: 0 48rpx;
+  padding-bottom: 88rpx;
+}
+.common-warning {
+  font-size: 30rpx;
+  line-height: 42rpx
+}

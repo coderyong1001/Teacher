@@ -1,0 +1,5 @@
+<view class="login-container">
+  <view class="common-title">填写信息</view>
+  <form-input stateKeys="{{stateKeys}}" bind:inputCallBack="inputCallBack" id="form-input" defaultValue="{{defaultValue}}" showRequire="{{true}}" />
+  <btn btnText="保存" bindtap="handleClick"  />
+</view>

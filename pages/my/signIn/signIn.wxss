@@ -1,0 +1,4 @@
+/* pages/my/signIn/signIn.wxss */
+page{
+    background:rgba(245,245,245,1);
+}

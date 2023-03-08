@@ -1,0 +1,5 @@
+<view class="nickname-container">
+  <view class="common-title">{{typename}}设置</view>
+  <form-input id="formInput" title="{{typename}}" stateKeys="{{stateKeys}}" defaultValue="{{defaulvalue}}" showRequire="{{false}}" />
+  <btn btnText="保存" bind:tap="commit" />
+</view>

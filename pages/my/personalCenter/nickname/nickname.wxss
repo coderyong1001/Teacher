@@ -1,0 +1,4 @@
+/* pages/my/personalCenter/nickname/nickname.wxss */
+.nickname-container {
+  padding: 0 48rpx;
+}

@@ -1,0 +1,3 @@
+<view>
+  <cell cellItem="{{cellItem}}" />
+</view>

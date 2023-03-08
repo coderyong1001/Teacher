@@ -1,0 +1,24 @@
+<view class="title">关于我们</view>
+<!-- <view class="our-info">
+<view class="our-name">中国儿童中心</view>
+<view class="last-update">最后更新时间：2019年6月12日</view>
+<view class="en-name">China National Children's Center</view>
+<view class="en-address">Beijing Daoyi Network Technology Co.,</view>
+<view class="en-address2">Ltd.</view>
+<view class="en-update">Last Revised：June 12.2019</view>
+</view> -->
+<view class="description">
+<text>
+  教育大计，教师为本。为了更好地服务儿童成长成才，提升校外、早期、学前等领域教师的专业素质能力，满足这部分教师群体职后培训需求，中心根据已有的工作平台和工作基础，专门成立了师资培训部。
+
+  师资培训部面向全国校外教育、学前教育、早期教育、家庭教育、学校素质教育等领域的教师及管理者，以开展研修活动为主线，分层次分领域分阶段提供常规培训课程，分地域分机构分专题承接定制培训课程；为广大教师倾力打造展示推广、研究创新、交流服务三个平台，开展全国未成年人校外教育兴趣小组活动“新理念 新模式”研讨活动；通过有高度、有宽度、有厚度、有温度的教师培训，助力教师专业成长，助推事业健康发展。
+
+  中国儿童中心师资培训部
+
+  地址：北京市西城区平安里西大街43号中国儿童中心综合楼B座602室
+
+  邮编：100035
+
+  电话：010-66514331、66160149
+</text>
+</view>

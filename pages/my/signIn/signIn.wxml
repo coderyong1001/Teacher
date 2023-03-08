@@ -1,0 +1,7 @@
+<view class="percent100 {{showNoData?'gray':''}}">
+    <paging showNoData="{{showNoData}}">
+        <signin-train-card wx:for="{{signList}}" wx:key="index" act-name="{{item.name}}" act-time="{{item.range}}"
+            act-address="{{item.place.detail_address}}" data-id="{{item.id}}" bind:tap="toDetail" train="{{false}}">
+        </signin-train-card>
+    </paging>
+</view>

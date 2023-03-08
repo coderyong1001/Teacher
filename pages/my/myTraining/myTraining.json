@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我的培训",
+  "usingComponents": {
+    "paging": "/components/paging/paging"
+  },
+  "enablePullDownRefresh": true
+}

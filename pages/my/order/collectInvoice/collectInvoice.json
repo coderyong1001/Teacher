@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "收集订单",
+  "usingComponents": {
+    "btn": "/components/btn/btn"
+  }
+}

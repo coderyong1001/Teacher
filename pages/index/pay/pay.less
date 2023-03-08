@@ -1,0 +1,549 @@
+.pay-container {
+  width: 100%;
+  padding-bottom: 200rpx;
+
+  // 公用部分
+  .radio-value {
+    margin-right: 12rpx;
+    font-size: 26rpx;
+    color: #333;
+  }
+
+  .radio {
+    transform: scale(0.8)
+  }
+
+  // 标题公用部分
+  .pay-thirdtitle {
+    font-size: 26rpx;
+    line-height: 36rpx;
+    color: #333;
+    margin-bottom: 20rpx;
+    display: flex;
+    align-items: center;
+
+    &.mt16 {
+      margin-top: 32rpx;
+    }
+  }
+  .offline-pay {
+    font-size: 26rpx;
+    display: flex;
+    align-items: center;
+    .pay-icon {
+      margin-left: 12rpx;
+    }    
+  }
+  // 头部
+  .pay-header {
+    background: #018389;
+    color: #fff;
+    padding: 34rpx 48rpx 0 48rpx;
+    height: 428rpx;
+    box-sizing: border-box;
+
+    .pay-title {
+      font-size: 48rpx;
+      font-weight: 500;
+      line-height: 80rpx;
+    }
+
+    .activity-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40rpx;
+
+      .left {
+        .activity-name {
+          font-size: 34rpx;
+          font-weight: 500;
+          line-height: 48rpx;
+        }
+
+        .activity-time {
+          font-size: 30rpx;
+          line-height: 42rpx;
+          margin-top: 12rpx;
+          font-weight: 300;
+          color: rgba(255, 255, 255, 0.7);
+        }
+      }
+
+      .right {
+        .pay-logo {
+          width: 280rpx;
+          height: 154rpx;
+          background: rgba(255, 255, 255, 1);
+          border-radius: 8rpx;
+        }
+      }
+    }
+  }
+  // 入住信息
+  .hotel-info-box {
+    width: 654rpx;
+    padding: 48rpx;
+    display: flex;
+    background-color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    font-size: 30rpx;
+    border-radius: 8rpx;
+    margin-bottom: 40rpx;   
+    .subtitle {
+      font-weight: 600;
+      color:rgba(51,51,51,1);
+    }
+    .value-box {
+      display: flex;
+      align-items: center;
+      .value-text {
+        color:rgba(153,153,153,1);
+      }
+      .arrow {
+        width: 16rpx;
+        height: 26rpx;
+        margin-left: 48rpx;
+      }
+    }
+  }
+  // 支付内容
+  .pay-content {
+    background: rgba(245, 245, 245, 1);
+    
+    .pay-content-wrapper {
+      transform: translateY(-60rpx);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }  
+    // 公用
+    .minus-icon {
+      width: 30rpx;
+      height: 30rpx;
+      margin-right: 20rpx;
+    }
+
+    .pay-card {
+      width: 654rpx;
+      background: #fff;
+      border-radius: 8rpx;
+      color: #333;
+      margin-bottom: 40rpx;
+      &.no-mb {
+        margin-bottom: 0;
+      }
+      &.pd16 {
+        padding-bottom: 32rpx;
+      }
+
+      .pay-card-top {
+        padding: 0 48rpx;
+
+        .pay-subtitle {
+          font-size: 30rpx;
+          font-weight: 600;
+          line-height: 42rpx;
+          margin: 48rpx 0 32rpx 0;
+        }
+
+        .person-info {
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: 26rpx;
+          /* align-items: center; */
+          margin-top: 32rpx;
+
+          .hotel-info {
+            width: 556rpx;
+          }
+
+          &.no-border-bottom {
+            border-bottom: none;
+          }
+
+          .pay-card-left {
+            display: flex;
+
+            .info-box {
+              font-size: 26rpx;
+              height: 160rpx;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+
+              .name {
+                font-size: 30rpx;
+                font-weight: 500;
+                line-height: 42rpx;
+                width: 360rpx;
+                .person-name {
+                  margin-right: 20rpx;                  
+                }
+                .tel-phone {
+                  font-size: 26rpx;
+                  color: rgba(153, 153, 153, 1);
+                  line-height: 36rpx;
+                }
+              }
+              .company,.address {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 350rpx;
+              }
+            }
+          }
+
+          .head-pic {
+            width: 142rpx;
+            height: 160rpx;
+          }
+
+
+          .choose-room {
+            display: flex;
+            margin-bottom: 32rpx;
+
+            .room-box {
+              width: 154rpx;
+              height: 58rpx;
+              border-radius: 2rpx;
+              border: 1rpx solid #EDEDED;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 26rpx;
+              color: #333;
+              margin-right: 22rpx;
+
+              &.selected {
+                border-color: #018389;
+                color: #018389;
+              }
+
+              .room-icon {
+                height: 40rpx;
+                margin-right: 8rpx;
+
+                &.single {
+                  width: 16rpx;
+                }
+
+                &.double {
+                  width: 32rpx;
+                }
+
+                &.triple {
+                  width: 50rpx;
+                }
+              }
+            }
+          }
+
+          .radio-group {
+            display: flex;
+            justify-content: space-between;
+
+            // margin-bottom: 48rpx;
+            &.radio-group-pay {
+              margin-bottom: 32rpx;
+            }
+
+            .num-radio {
+              .radio-box {
+                display: flex;
+                align-items: center;
+
+                .num-input {
+                  font-size: 20rpx;
+                  width: 102rpx;
+                  height: 56rpx;
+                  margin-right: 8rpx;
+                  border-radius: 2rpx;
+                  opacity: 0.35;
+                  border: 1rpx solid rgba(151, 151, 151, 1);
+                  box-sizing: border-box;
+                  text-align: center;
+                  color: #000;
+                }
+              }
+            }
+          }
+
+          // 酒店选择
+          .hotel-radio-group {
+            .hotel-radio {
+              .hotel-radio-box {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20rpx;
+
+              }
+            }
+
+          }
+
+          .remark-content {
+            padding-right: 48rpx;
+            width: 558rpx;
+
+            .remark-text {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .pay-card-bottom {
+        border-top: 1rpx solid #f5f5f5;
+        display: flex;
+        justify-content: flex-end;
+        padding: 30rpx 48rpx 30rpx 0;
+
+        font-size: 30rpx;
+        font-weight: 500;
+        color: rgba(1, 131, 137, 1);
+      }
+
+      // 暂无信息
+      .card-no-data {
+        font-size: 26rpx;
+        color: #999;
+        line-height: 36rpx;
+        margin-bottom: 32rpx;
+      }
+    }
+
+    /* 上传文件 */
+    .uploadfile {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 36rpx;
+
+      .uploadfile-item {
+        margin-right: 50rpx;
+        position: relative;
+
+        .delete-item {
+          width: 28rpx;
+          height: 28rpx;
+          position: absolute;
+          right: 0;
+        }
+
+      }
+
+      .add-file {
+        width: 200rpx;
+        height: 150rpx;
+      }
+    }
+  }
+
+  // 按钮
+  .pay-btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 48rpx;
+    box-shadow: 0px -4rpx 6rpx 0px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 99999;
+    background: #fff;
+    box-sizing: border-box;
+
+    .pay-text {
+      font-size: 30rpx;
+      color: #333;
+      line-height: 42rpx;
+    }
+
+    .dollar {
+      font-size: 30rpx;
+      font-weight: 500;
+      color: rgba(242, 71, 36, 1);
+      line-height: 30rpx;
+      margin: 0 8rpx;
+    }
+
+    .total-money {
+      font-size: 44rpx;
+      font-weight: 500;
+      color: rgba(242, 71, 36, 1);
+      line-height: 44rpx;
+    }
+
+    .pay-detail {
+      font-size: 26rpx;
+      color: rgba(1, 131, 137, 1);
+      line-height: 36rpx;
+      display: flex;
+      align-items: center;
+
+      .pay-triangle {
+        width: 20rpx;
+        height: 12rpx;
+        margin-left: 6rpx;
+        transition: all 0.3s;
+
+        &.active {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .pay-submit {
+      width: 192rpx;
+      height: 98rpx;
+      background: rgba(1, 131, 137, 1);
+      border-radius: 4rpx;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+  }
+
+  // 费用明细
+  .fee-detail {
+    width: 654rpx;
+    height: 216rpx;
+    position: absolute;
+    bottom: -200rpx;
+    left: 50%;
+    transform: translateX(-327rpx);
+    padding: 48rpx;
+    box-sizing: border-box;
+    color: #333;
+    transition: all 0.3s;
+
+    &.on {
+      bottom: 194rpx;
+    }
+
+    .fee-detail-icon {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .fee-detail-container {
+      position: relative;
+      z-index: 99991;
+
+      .fee-detail-text {
+        font-size: 30rpx;
+        font-weight: 500;
+        line-height: 42rpx;
+        padding-bottom: 20rpx;
+
+      }
+
+      .activity-name-box {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20rpx;
+        font-size: 26rpx;
+        line-height: 36rpx;
+
+        .act-money {
+          color: rgba(242, 71, 36, 1);
+        }
+      }
+    }
+
+  }
+
+  // 添加报名人
+  .add-person-container {
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -750rpx;
+    z-index: 9999999;
+    transition: all 0.3s;
+
+    &.on {
+      bottom: 0rpx;
+    }
+
+    .add-btn-box {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 32rpx;
+      font-size: 32rpx;
+      font-weight: 500;
+      color: #333;
+      box-sizing: border-box;
+
+      .confirm {
+        color: #018389;
+      }
+    }
+
+    .add-item-box {
+      height: 224rpx;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 48rpx;
+
+      .item-left-box {
+        display: flex;
+        align-items: center;
+
+        .choose-person-box {
+          margin-right: 48rpx;
+
+          .checked .wx-checkbox-input {
+            background-color: #018389;
+          }
+        }
+
+        .person-info-box {
+          .add-name {
+            color: #000;
+            font-size: 32rpx;
+
+            .name-text {
+              font-weight: 500;
+              margin-right: 20rpx;
+            }
+          }
+
+          .add-info-box {
+            font-size: 28rpx;
+            color: rgba(153, 153, 153, 1);
+            line-height: 28rpx;
+
+            &.major {
+              margin: 20rpx 0;
+            }
+          }
+        }
+      }
+
+      .item-right-box {
+        .edit {
+          width: 38rpx;
+          height: 36rpx;
+        }
+      }
+    }
+
+    .add-btn {
+      background-color: #F5F5F5;
+      padding: 40rpx 48rpx;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+/* .code-box {
+  display: flex;
+}
+.input-item {
+  flex: 1;
+  border-right: 1rpx solid #ccc;
+} */
+.code {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.indentify-code{
+  display: flex;
+  justify-content: space-between;
+}
+.indentify-code .code-box{
+  width: 84rpx;
+  border-bottom: 1rpx solid #CDCDCD;
+  text-align: center;
+  padding-bottom: 26rpx;
+}
+.indentify-code .code-box.active {
+  border-bottom-color: #018389;
+  transition: all 0.3s;
+}
+.realCode{
+  width: 0px;
+  height: 0px;
+}
+.cutdown {
+  font-size: 28rpx;
+  font-weight: 500;
+  color:rgba(1,131,137,1);
+  line-height:20px;
+  margin-top: 34rpx;
+}

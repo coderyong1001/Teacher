@@ -1,0 +1,12 @@
+<view class='class'>
+  <block wx:for="{{ETCList}}" wx:key="index">
+    <view class="classItem" data-value="{{index}}" bindtap='goDetails'>
+      <view class='des'>
+        课程名称：{{item.course_name}}
+      </view>
+      <view class='des'>
+        发放时间：{{item.create_time}}
+      </view>
+    </view>
+  </block>
+</view>

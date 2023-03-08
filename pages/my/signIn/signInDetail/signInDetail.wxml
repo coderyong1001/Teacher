@@ -1,0 +1,32 @@
+<!--pages/my/signIn/signInDetail/signInDetail.wxml-->
+<wxs module="filter" src="../../../../wxs/format_date.wxs"></wxs>
+<view class="backgrond"></view>
+<view class="activity-info">
+  <view class="activity-name">{{courseInfo.name}}</view>
+  <view class="activity-time">{{courseInfo.range}}</view>
+  <!-- <view class="activity-address">{{courseInfo.place.detail_address}}</view> -->
+</view>
+<view class="record-list">
+  <view wx:for="{{schedule}}" wx:key="index" class="record-item onepx-border-bottom">
+    <view class="signin">
+      <!-- <view class="item-time">{{item.course_date}} {{item.day_part}}活动</view> -->
+      <view class="item-time">
+        {{filter.getMonthDayHM(item.start_time, 'YYYY.MM.DD hh:mm')}}—{{filter.getMonthDayHM(item.end_time, 'hh:mm')}}
+      </view>
+      <block wx:if="{{item.location.length}}">
+        <view class="item-location">
+          签到地点：<text wx:for="{{item.location}}" wx:key="locationIndex" wx:for-item="locationItem"
+            wx:for-index="locationIndex">{{locationItem.name}}<text
+              wx:if="{{locationIndex != item.location.length - 1}}">、</text></text>
+        </view>
+      </block>
+      <block wx:if="{{!item.location.length}}">
+        <view class="item-location">签到地点：暂无签到地点</view>
+      </block>
+      <view class="item-description" wx:if="{{!item.need_checkin || item.checkin_time}}">
+        {{item.need_checkin ? item.checkin_time : "无需签到"}}</view>
+    </view>
+    <view class="no-signin" wx:if="{{!item.checkin_time && item.need_checkin}}" data-id="{{item.id}}"
+      data-start="{{item.start}}" data-end="{{item.end}}" bind:tap="signIn">去签到</view>
+  </view>
+</view>

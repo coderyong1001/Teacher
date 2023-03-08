@@ -1,0 +1,21 @@
+/* components/universal-button/universal-button.wxss */
+.btn-container {
+  margin-top: 56rpx;
+}
+.btn-container.no-mt {
+  margin-top: 0;
+}
+.btn {
+  height: 88rpx;
+  background: rgba(1,131,137,1);
+  border-radius: 4px;
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn::after {
+  border: none;
+}

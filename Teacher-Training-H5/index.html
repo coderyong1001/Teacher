@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>活动</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #F5F5F5;
+      scrollbar-width: none;
+    }
+    body::-webkit-scrollbar {
+      display: none; /* Chrome Safari */
+    }
+    .title {
+      position: relative;
+      height: 68.2vw;
+      background: linear-gradient(136deg, #1AA3A9, #018389);
+      background: url(./title.png)0 /100% 100%;
+      color: #fff;
+      padding: 16.8vw 6.4vw;
+      padding-bottom: 0;
+      box-sizing: border-box;
+      z-index: -1;
+    }
+    .download-link {
+      position: absolute;
+      bottom: 12vw;
+      font-size: 3.7vw;
+      line-height: 1.4;
+      text-decoration: underline;
+    }
+    #historybox {
+      position: relative;
+      background-color: #fff;
+      width: 87.2vw;
+      height: 48.8vw;
+      box-sizing: border-box;
+      overflow: hidden;
+      border-radius: 4px;
+      margin: 0 auto;
+      margin-top: -5.6vw;
+      padding: 4vw 3.75vw 0 4.8vw;
+    }
+    .history-title {
+      margin: 0 auto;
+      width: 24.2vw;
+      height: 9.3vw;
+      font-size: 3.7vw;
+      line-height: 9.3vw;
+      text-align: center;
+      background: #159CA3;
+      background: url(./title-bg.png) 0 / 100% 100%;
+      color: #fff;
+    }
+    .drop-down {
+      height: 12.8vw;
+      width: 100%;
+      left: 0;
+      position: absolute;
+      background-color: #fff;
+      bottom: 0;
+      box-sizing: border-box;
+      padding-top: 6.4vw;
+    }
+    #icon {
+      width: 4.5vw;
+      height: 1.6vw;
+      background: url(./drop-down.png) 0 / 100% 100%;
+      margin: 0 auto;
+    }
+    .list-item {
+      font-size: 4.3vw;
+      line-height: 1.875;
+      padding-left: 5.3vw;
+      color: #333333;
+      text-decoration: underline;
+      background: linear-gradient(#159CA3, #159CA3) top left / 2.1vw 2.1vw no-repeat;
+      margin-top: 5.6vw;
+    }
+    .marginbottom{
+      margin-bottom: 12.8vw;
+    }
+    .classify-title {
+      padding: 0 6.4vw;
+      font-size: 4.8vw;
+      line-height: 1.4;
+      color: #333333;
+      font-weight: 600;
+      margin: 6.4vw 0 3.2vw 0;
+    }
+    .scroll-box {
+      display: flex;
+      flex-wrap: nowrap;
+      width: 100%;
+      overflow: scroll;
+    }
+    .no-scrollbar {
+      scrollbar-width: 0;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .scroll-item {
+      flex: 0 0 auto;
+      width: 50.4vw;
+      height: 30.1vw;
+      border-radius: 0px 0px 2px 2px;
+      font-size: 3.2vw;
+      line-height: 7.7vw;
+      color: #333333;
+      padding: 0 2.1vw;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-left: 6.4vw;
+    }
+    .scroll-box::after {
+      content: "";
+      flex: 0 0 6.4vw;
+    }
+    .active-content-title {
+      background: #159CA3;
+      background: url(./title-bg1.png) 0 / 100% 100%;
+      width: 35.4vw;
+      height: 9.3vw;
+      line-height: 9.3vw;
+      font-size: 3.7vw;
+      color: #fff;
+      text-align: center;
+      margin: 10.6vw auto;
+      margin-bottom: 0;
+    }
+    .active-item {
+      width: 87.2vw;
+      margin: 0 auto;
+      padding: 6.4vw 0;
+      border-bottom: 1px solid #D8D8D8;
+    }
+    .active-img {
+      width: 87.2vw;
+      height: 42.1vw;
+      box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.37);
+      border-radius: 2px;
+      margin-bottom: 3.2vw;
+    }
+    .active-text {
+      font-size: 3.7vw;
+      line-height: 1.4;
+      color: #333333;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+    }
+    .active-introduce {
+      flex: 1;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .active-time {
+      flex: 0 0 auto;
+      color: #666666;
+      font-weight: 400;
+      margin-left: 2.1vw;
+    }
+    .connect-title {
+      margin: 10.6vw auto;
+      margin-bottom: 6.4vw;
+      width: 24.2vw;
+      height: 9.3vw;
+      font-size: 3.7vw;
+      line-height: 9.3vw;
+      text-align: center;
+      background: #159CA3;
+      background: url(./title-bg.png) 0 / 100% 100%;
+      color: #fff;
+    }
+    .connect-info {
+      padding: 0 6.4vw;
+      margin-bottom: 2px;
+      font-size: 4vw;
+      line-height: 1.66;
+      color: #333333;
+    }
+    .margin26 {
+      margin-bottom: 6.9vw;
+    }
+  </style>
+</head>
+<body>
+  <div class="title"><div class="download-link">附PDF下载</div></div>
+  <div id="historybox">
+    <div class="history-title">往期回顾</div>
+    <div id="listbody">
+    </div>
+    <div class="marginbottom"></div>
+    <div class="drop-down"><div id="icon"></div></div>
+  </div>
+  <div class="classify-title">前沿理论</div>
+  <div class="scroll-box" id="theroy">
+    <div class="scroll-item" style="background: linear-gradient(to top,rgba(255,255,255,0.9) 7.7vw, transparent 0), url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2848120264,2778704476&fm=26&gp=0.jpg) 0 / 100% 100%;"><span>往期主旨报告</span><span>02:15</span></div>
+    <div class="scroll-item" style="background: linear-gradient(to top,rgba(255,255,255,0.9) 7.7vw, transparent 0), url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2848120264,2778704476&fm=26&gp=0.jpg) 0 / 100% 100%;"><span>往期主旨报告</span><span>02:15</span></div>
+    <div class="scroll-item" style="background: linear-gradient(to top,rgba(255,255,255,0.9) 7.7vw, transparent 0), url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2848120264,2778704476&fm=26&gp=0.jpg) 0 / 100% 100%;"><span>往期主旨报告</span><span>02:15</span></div>
+    <div class="scroll-item" style="background: linear-gradient(to top,rgba(255,255,255,0.9) 7.7vw, transparent 0), url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2848120264,2778704476&fm=26&gp=0.jpg) 0 / 100% 100%;"><span>往期主旨报告</span><span>02:15</span></div>
+  </div>
+  <div class="classify-title">优秀案例</div>
+  <div class="scroll-box">
+    <div class="scroll-item" style="background: linear-gradient(to top,rgba(255,255,255,0.9) 7.7vw, transparent 0), url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2848120264,2778704476&fm=26&gp=0.jpg) 0 / 100% 100%;"><span>往期主旨报告</span><span>02:15</span></div>
+    <div class="scroll-item" style="background: linear-gradient(to top,rgba(255,255,255,0.9) 7.7vw, transparent 0), url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2848120264,2778704476&fm=26&gp=0.jpg) 0 / 100% 100%;"><span>往期主旨报告</span><span>02:15</span></div>
+    <div class="scroll-item" style="background: linear-gradient(to top,rgba(255,255,255,0.9) 7.7vw, transparent 0), url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2848120264,2778704476&fm=26&gp=0.jpg) 0 / 100% 100%;"><span>往期主旨报告</span><span>02:15</span></div>
+    <div class="scroll-item" style="background: linear-gradient(to top,rgba(255,255,255,0.9) 7.7vw, transparent 0), url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2848120264,2778704476&fm=26&gp=0.jpg) 0 / 100% 100%;"><span>往期主旨报告</span><span>02:15</span></div>
+  </div>
+  <div class="active-content-title">
+    第六届活动内容
+  </div>
+  <div id="activecontentbody">
+    <div class="active-item">
+      <div class="active-img" style="background: url(./title.png) 0 / 100% 100%;"></div>
+      <div class="active-text">
+        <span class="active-introduce">活动介绍</span>
+        <span class="active-time">03:21</span>
+      </div>
+    </div>
+    <div class="active-item">
+      <div class="active-img" style="background: url(./title.png) 0 / 100% 100%;"></div>
+      <div class="active-text">
+        <span class="active-introduce">超级超级超级超级超级超级超级超级超级超级超级超级超级长的活动介绍</span>
+        <span class="active-time">03:21</span>
+      </div>
+    </div>
+  </div>
+  <div class="connect-title">联系我们</div>
+  <div class="connect-info">电话：18765456765</div>
+  <div class="connect-info">地址：北京市中国儿童中心</div>
+  <div class="connect-info">邮箱：123453@qqww.com</div>
+  <div class="connect-info margin26">微信号群：77867657</div>
+  <script src="./jquery.min.js"></script>
+  <script>
+    // 事件绑定
+    window.onload = function() {
+      $(".drop-down").on("click", iconClickHandler)
+    }
+    // 手机消除滚动条、pc保留
+    var regex = /(nokia|iphone|android|motorola|^mot-|softbank|foma|docomo|kddi|up.browser|up.link|htc|dopod|blazer|netfront|helio|hosin|huawei|novarra|CoolPad|webos|techfaith|palmsource|blackberry|alcatel|amoi|ktouch|nexian|samsung|^sam-|s[cg]h|^lge|ericsson|philips|sagem|wellcom|bunjalloo|maui|symbian|smartphone|midp|wap|phone|windows ce|iemobile|^spice|^bird|^zte-|longcos|pantech|gionee|^sie-|portalmmm|jigs browser|hiptop|^benq|haier|^lct|operas*mobi|opera*mini|320x320|240x320|176x220)/i
+    if (regex.test(navigator.userAgent)) {
+      $(".scroll-box").addClass("no-scrollbar")
+    }
+    function initHistoryList() {
+      var historyList = [
+        {url: "#", text: "第五届双新会回顾，日程安排、合影、十佳案例获奖名单、出版物介绍"},
+        {url: "#", text: "第五届双新会回顾，日程安排、合影、十佳案例获奖名单、出版物介绍"},
+        {url: "#", text: "第五届双新会回顾，日程安排、合影、十佳案例获奖名单、出版物介绍"},
+        {url: "#", text: "第五届双新会回顾，日程安排、合影、十佳案例获奖名单、出版物介绍"},
+        {url: "#", text: "第五届双新会回顾，日程安排、合影、十佳案例获奖名单、出版物介绍"},
+        {url: "#", text: "第五届双新会回顾，日程安排、合影、十佳案例获奖名单、出版物介绍"}
+      ]
+      var a = ""
+      for(var i=0; i<historyList.length; i++) {
+        a += '<a href="'+historyList[i].url+'"><div class="list-item">'+historyList[i].text+'</div></a>'
+      }
+      $("#listbody").html(a)
+    }
+    var iconClickHandler = (function() {
+      var fixedHeight = $("#historybox").prop("clientHeight")
+      var angle = 0
+      var height = fixedHeight
+      var flag = 1
+      var interval = "null"
+      return function () {
+        if(interval!=="null") return
+        var scrollHeight = $("#historybox").prop("scrollHeight")
+        var speed = 24
+        interval = setInterval(function(){
+          angle += flag*180/(1000/speed)
+          height += flag*(scrollHeight-fixedHeight)/(1000/speed)
+          if(angle >= 180 || angle <= 0) {
+            clearInterval(interval)
+            interval = "null"
+            angle = angle <= 0 ? 0 : 180
+            height = height <= fixedHeight ? fixedHeight : height
+            flag = -flag
+          }
+          $("#icon").css("transform", "rotateZ(" + angle + "deg)")
+          $("#historybox").css("height", height + "px")
+        }, speed)        
+      }
+    })()
+    initHistoryList()
+  </script>
+</body>
+</html>

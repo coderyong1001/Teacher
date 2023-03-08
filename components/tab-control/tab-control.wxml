@@ -1,0 +1,23 @@
+<view class="tabtab">
+  <view class="tap-container">
+    <block wx:for="{{tabList}}" wx:key="index">
+      <view class="tap-box blue}}" data-id="{{item.id}}" data-tabtype="{{item.tabType}}" catchtap="choiceTab">
+        <view class="tap-text">
+          {{tabNameObj[item.tabType] || item.controlList[0].name}}
+        </view>
+        <image src="/assets/images/triangle.png" class="triangle {{showList&&tabId==item.id?'translate':''}}" />
+      </view>
+    </block>
+  </view>
+  <view class="control-list-box" hidden="{{!showList}}">
+    <view class="control-list" catchtap="hideModal">
+      <scroll-view class="lists-box" scroll-y="true" style="max-height: 500rpx;">
+        <view class="control-item {{controlIdObj[item.tabType] === item.id ? 'blue' : 'grayness'}}" wx:for="{{controlList}}"
+          wx:key="index" data-id="{{item.id}}" data-name="{{item.name}}" data-tabtype="{{item.tabType}}"
+          catchtap="choiceControl">
+          {{item.name}}
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

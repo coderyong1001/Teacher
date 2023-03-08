@@ -1,0 +1,34 @@
+.history-container {
+  min-height: 100vh;
+  .invoice-history-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 224rpx;
+    box-sizing: border-box;
+    padding: 48rpx 48rpx 26rpx 48rpx;
+    .invoice-time {
+      font-size: 32rpx;
+      color: #000;
+    }
+    .invoice-type-status {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .invoice-type {
+        font-size: 28rpx;
+        color:rgba(51,51,51,1);
+      }
+      .invoice-status {
+        .arrow {
+          margin-left: 16rpx;
+        }
+      }
+    }
+    .invoice-money {
+      font-size: 36rpxpx;
+      font-weight:500;
+      color:rgba(242,71,36,1);
+    }
+  }
+}

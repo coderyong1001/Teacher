@@ -1,0 +1,16 @@
+<view class="opinion-container">
+  <view class="opinion-header"></view>
+  <view class="opinion-box">
+    <view class="opiniton-content">
+      <view class="opinion-title">意见反馈</view>
+      <textarea class="areas" placeholder='在这里将您的宝贵意见留下来' placeholder-style="color: #999; font-size: 26rpx;"
+        minlength="{{min}}" maxlength="{{max}}" bindinput="inputChange" />
+      <text class="currentWordNumber">{{currentWordNumber || 0}}/{{max}}</text>
+    </view>
+    <view class="btn-box">
+      <btn btnText="提交" bind:tap="commit"/>
+    </view>
+  </view>
+  
+  
+</view>

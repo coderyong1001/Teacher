@@ -1,0 +1,45 @@
+/* pages/my/opinion/opinion.wxss */
+.opinion-container {
+  height: 100%;
+  overflow: hidden;
+}
+.opinion-container .opinion-header {
+  height: 164rpx;
+  background: #018389;
+}
+.opinion-container .opinion-box {
+  height: 100%;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.opinion-container .opinion-box .opiniton-content {
+  width: 654rpx;
+  height: 458rpx;
+  background: #ffffff;
+  border-radius: 8rpx;
+  padding: 48rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  color: #333;
+  font-size: 26rpx;
+  transform: translateY(-96rpx);
+}
+.opinion-container .opinion-box .opiniton-content .opinion-title {
+  font-size: 30rpx;
+  font-weight: 500;
+  line-height: 42rpx;
+  margin-bottom: 20rpx;
+}
+.opinion-container .opinion-box .opiniton-content .currentWordNumber {
+  align-self: flex-end;
+  line-height: 36rpx;
+}
+.opinion-container .btn-box {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 48rpx;
+  transform: translateY(-96rpx);
+}

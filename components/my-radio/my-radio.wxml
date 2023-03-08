@@ -1,0 +1,6 @@
+<view class="radio-class radio" bind:tap="tapthis" >
+  <view class="not-checked" wx:if="{{!choice}}" style="width: {{size}};height: {{size}};"></view>
+  <view class="checked" wx:if="{{choice}}" style="width: {{size}};height: {{size}};">
+    <icon type="success" size="{{size}}" color="{{color}}"></icon>
+  </view>
+</view>

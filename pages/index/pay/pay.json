@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "支付",
+  "usingComponents": {
+    "modal": "/components/modal/modal",
+    "btn": "/components/btn/btn",
+    "back-my": "/components/back-my/back-my"
+  }
+}

@@ -1,0 +1,59 @@
+<wxs module="filter" src="../../../../wxs/format_date.wxs"></wxs>
+<view class="collect-container">
+  <view class="search-container">
+    <view class="search-box">
+      <icon type="search" size="14" color="#B2B2B2" class="search-icon" />
+      <input placeholder="请输入活动名称" bindconfirm="searchInput" confirm-type="search" value="{{search}}"
+        placeholder-style="color: #9C9C9D;font-size: 30rpx;" class="search-input" />
+    </view>
+  </view>
+  <view class="center">
+    <view class="title">请选择需要收集的订单的活动名称</view>
+    <view class="view1">
+      <scroll-view class="scroll scroll1" scroll-y="true" bindscrolltolower="bindscrolltolower">
+        <block wx:if="{{activityList.length}}">
+          <block wx:for="{{activityList}}" wx:key="index">
+            <view class="collect-item onepx-border-bottom {{index === activityList.length - 1 ? 'no-bt' : ''}}"
+              bindtap="singleChoose" data-index="{{item.id}}">
+              <view class="activity-info">
+                <view class="activity-name">{{item.name}}</view>
+                <view class="activity-time">
+                  {{filter.getMonthDayHM(item.range_start, 'YYYY.MM.DD')}}-{{filter.getMonthDayHM(item.range_end, 'YYYY.MM.DD')}}
+                </view>
+              </view>
+              <icon type="{{ selectedList[''+item.id] ? 'success' : 'circle' }}" size="22"
+                color="{{ selectedList[''+item.id] ? '#018389' : '#999' }}" class="select-icon" />
+            </view>
+          </block>
+        </block>
+        <block wx:elif="{{!activityList.length}}">
+          <view class="no-collect-data">
+            <image src="/assets/images/no-data.png" class="no-collect-img" />
+            <view>哎呀，里面没有内容…</view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+    <view class="title">已选</view>
+    <view class="view2">
+      <scroll-view scroll-y="true" class="scroll">
+        <block wx:for="{{selectedArray}}" wx:key="index">
+          <view class="collect-item onepx-border-bottom {{index === selectedArray.length - 1 ? 'no-bt' : ''}}"
+            bindtap="singleChoose" data-index="{{item.id}}">
+            <view class="activity-info">
+              <view class="activity-name">{{item.name}}</view>
+              <view class="activity-time">
+                {{filter.getMonthDayHM(item.range_start, 'YYYY.MM.DD')}}-{{filter.getMonthDayHM(item.range_end, 'YYYY.MM.DD')}}
+              </view>
+            </view>
+            <icon type="success" size="22" color="#018389" class="select-icon" />
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="btn-box">
+    <button wx:if="{{selectedArray.length > 0}}" open-type="share" class="share-btn">去收集</button>
+    <button wx:else bindtap="noList" class="share-btn">去收集</button>
+  </view>
+</view>

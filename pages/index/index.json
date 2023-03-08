@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "热门活动",
+  "usingComponents": {
+    "activity-list": "/components/activity-list/activity-list",
+    "tab-control": "/components/tab-control/tab-control",
+    "back-my": "/components/back-my/back-my",
+    "paging": "/components/paging/paging"
+  },
+  "enablePullDownRefresh": true
+}

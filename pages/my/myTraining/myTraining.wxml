@@ -1,0 +1,26 @@
+<wxs src='../../../wxs/util.wxs' module="filter"></wxs>
+<view class="percent100 {{showNoData?'gray':'white'}}">
+  <paging showNoData="{{showNoData}}">
+    <view class="box" wx:for="{{trainings}}" wx:key="index">
+      <view class="course-title">
+        <view class="course-name">{{item.name}}</view>
+        <view class="course-status" bind:tap="showDetail" data-id="{{item.id}}">
+          {{statusObj[item.status]}}
+          <image class="arrow" src="/assets/images/arrow.png"></image>
+        </view>
+      </view>
+      <view class="course-time">
+        {{item.range_start}}-{{item.range_end}}
+      </view>
+      <view class="course-place">
+        <view class="course-address">{{item.place.detail_address}}</view>
+        <view class="questionnaire"
+          wx:if="{{item.showLink && item.questionnaire_link}}"
+          bind:tap="toQeustionnaire"
+          data-url="{{item.questionnaire_link}}">
+          填写调查问卷
+        </view>
+      </view>
+    </view>
+  </paging>
+</view>

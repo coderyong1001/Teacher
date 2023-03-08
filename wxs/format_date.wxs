@@ -1,0 +1,70 @@
+/**
+ * 获取时间的函数
+ * @param {date} String 日期
+ * @param {formatType} String 格式的类型
+ *  formatType: 按需取
+ *  'MM.DD'
+ *  'MM月DD日'
+ *  'hh:mm'
+ */
+var formatTime = function (time, formatType) {
+  var year = time.getFullYear()
+  var month = time.getMonth() + 1
+  var day = time.getDate()
+  var hour = time.getHours()
+  var minute = time.getMinutes()
+  var second = time.getSeconds()
+  month < 10 ? month = '0' + month : month
+  day < 10 ? day = '0' + day : day
+  hour < 10 ? hour = '0' + hour : hour
+  minute < 10 ? minute = '0' + minute : minute
+  second < 10 ? second = '0' + second : second
+  formatType = formatType.replace('YYYY', year)
+  formatType = formatType.replace('MM', month)
+  formatType = formatType.replace('DD', day)
+  formatType = formatType.replace('hh', hour)
+  formatType = formatType.replace('mm', minute)
+  formatType = formatType.replace('ss', second)
+      
+  return formatType
+}
+var getMonthDayHM = function (strDate, formatType) {
+  // 解决ios出现NaN问题
+  var realDate = strDate ? getDate(strDate.replace(getRegExp('-', 'g'), '/')) : getDate()
+  return formatTime(realDate, formatType)
+}
+var getRemainTime = function (strDate, formatType) {
+  var endTime = strDate ? getDate(strDate.replace(getRegExp('-', 'g'), '/')) : getDate()
+  var currentTime = getDate()
+  if (endTime < currentTime) {
+    return false
+  }
+  var remainTime = Date.parse(endTime) / 1000 - Date.parse(currentTime) / 1000
+  var day = Math.floor(remainTime / 3600 / 24)
+  var hr = Math.floor((remainTime - day * 3600 * 24) / 3600);
+  hr = hr < 10 ? '0' + hr : hr
+  var min = Math.floor((remainTime - day * 3600 *24 - hr * 3600) / 60);
+  min = min < 10 ? '0' + min : min
+  var sec = remainTime - day * 3600 * 24 - hr * 3600 - min*60;
+  sec = sec < 10 ? '0' + sec : sec
+  return hr + ':' + min + ':' + sec + '' 
+}
+
+/**
+ * 对比未来时间和今天时间的函数
+ * 未来时间大于今天时间，返回1;否则返回0
+ * @param {date} String 日期
+ */
+var compareDate = function (strDate) {
+  // 解决ios出现NaN问题
+  var realDate = strDate ? getDate(strDate.replace(getRegExp('-', 'g'), '/')) : getDate()
+  var realDateStamp = realDate.getTime()
+  var currentDateStamp = getDate().getTime()
+  return (realDateStamp > currentDateStamp) ? 1 : 0
+}
+
+module.exports = {
+  getMonthDayHM: getMonthDayHM,
+  compareDate: compareDate,
+  getRemainTime: getRemainTime
+}

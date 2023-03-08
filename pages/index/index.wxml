@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class="container {{showSelected ? 'active' : ''}} {{showNoData ? 'gray no-pt percent100' : 'white'}}" bindtap="cancelChoose">
+  <view class="header-wrapper">
+    <view class="header-box">
+      <image src="/assets/images/header-bg.png" class="header-bg"></image>
+      <view class="pos-box" bindtap="chooseCity">
+        <image src="/assets/images/pos-icon.png" class="pos-icon" />
+        <text class="cur-position">{{city}}</text>
+        <image src="/assets/images/pos-select.png" class="select-icon" />
+      </view>
+      <view class="search-box">
+        <view class="search-time {{isFocus ? 'focus-style' : ''}}">
+          <view class="search-time-box">
+            <icon type="search" size="18" color="#666" class="common-icon" bindtap="clickSearch"/>
+            <input placeholder="点击输入搜索" value="{{search}}" class="search-input" bindinput="inputChange" bindfocus="focusInput" bindblur="blurInput" confirm-type="search"
+              bindconfirm="confirmSearch" />
+          </view>
+        </view>
+        <view class="cancel" wx:if="{{isFocus}}">取消</view>
+      </view>
+    </view>
+    <tab-control bind:confirmChoice="confirmChoice" bind:setActive="setActive" bind:cancelChoice="cancelChoice" tabList="{{tabList}}"
+      id="tabControl" />
+  </view>
+  <view class="{{showNoData ? 'pt396' : ''}}">
+    <paging showNoData="{{showNoData}}">
+      <activity-list activityList="{{activityList}}" />
+    </paging>
+  </view>
+  <back-my />
+</view>

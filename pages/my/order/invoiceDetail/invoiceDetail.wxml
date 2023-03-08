@@ -1,0 +1,208 @@
+<view class="pages" style="top: {{ top }}px;">
+  <view class="title">发票详情</view>
+  <view class="box" wx:if="{{ currentType == 1 }}">
+    <view class="invoice-type">是否开具发票</view>
+    <view class="types-group">
+      <view class="types-item">
+        <text>是</text>
+        <view class="inlineblock {{ !isNeedInvoice ? 'invoice-icons' : '' }}" catch:tap="clickYesNo" data-value="yes">
+          <icon wx:if="{{isNeedInvoice}}" color="#018389" size="44rpx" type="{{ isNeedInvoiceChoose ? 'success' : 'circle' }}"></icon>
+        </view>
+      </view>
+      <view class="types-item">
+        <text>否</text>
+        <view class="inlineblock {{ isNeedInvoice ? 'invoice-icons' : '' }}" catch:tap="clickYesNo" data-value="no">
+          <icon wx:if="{{!isNeedInvoice}}" color="#018389" size="44rpx" type="{{ isNeedInvoiceChoose ? 'success' : 'circle' }}"></icon>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{isNeedInvoice}}">
+    <view class="box">
+      <view class="invoice-type">发票材质</view>
+      <view class="radio-box">
+        <block wx:for="{{2}}" wx:key="index">
+          <view class="radio-wrapper">
+            <view class="radio-item-wrapper">
+              <view class="radio-item" catchtap="chooseType" data-name='paper_elec' data-value="{{index}}">
+                <!-- <text class="radio-text">纸质发票</text> -->
+                <!-- <icon type="success" size="{{22}}" color="#018389"> -->
+                <text class="radio-text">{{index == 0 ? '电子发票' : '纸质发票'}}</text>
+                <icon type="{{paramsObj.paper_elec == index ? 'success' : 'circle'}}" size="{{22}}" color="#018389">
+                </icon>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="box">
+      <view class="invoice-type">抬头类型</view>
+      <view class="radio-box">
+        <block wx:for="{{2}}" wx:key="index">
+          <view class="radio-wrapper">
+            <view class="radio-item-wrapper">
+              <view class="radio-item" catchtap="chooseType" data-name='title_type' data-value="{{index}}">
+                <text class="radio-text">{{index == 0 ? '单位' : '个人'}}</text>
+                <icon type="{{paramsObj.title_type == index ? 'success' : 'circle'}}" size="{{22}}" color="#018389">
+                </icon>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="box">
+      <view class="invoice-type">发票类型</view>
+      <view class="radio-box">
+        <block wx:for="{{2}}" wx:key="index"  wx:if="{{!paramsObj.title_type || paramsObj.title_type == 0 || (paramsObj.title_type == 1 && index === 0)}}">
+          <view class="radio-wrapper">
+            <view class="radio-item-wrapper">
+              <view class="radio-item" catchtap="chooseType" data-name='type' data-value="{{index}}">
+                <text class="radio-text">{{index == 0 ? '普通发票' : '专用发票'}}</text>
+                <icon type="{{paramsObj.type == index ? 'success' : 'circle'}}" size="{{22}}" color="#018389">
+                </icon>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="box">
+      <view class="invoice-type">发票抬头</view>
+      <input class="invoice-title" placeholder="请填写发票抬头..." value="{{paramsObj.title}}"
+        placeholder-class="placeholder-class" bindinput="inputChange" bindfocus="inputFocus" bindblur="inputBlur"
+        data-name='title'></input>
+      <block wx:if="{{invoiceTemp.length && showdown}}">
+        <scroll-view scroll-y class="selecct-box">
+          <view class="select-item-box">
+            <view wx:for="{{invoiceTemp}}" wx:key="index" class="select-item" data-id="{{item.id}}"
+              bindtap="chooseTemp">
+              {{item.title}}
+            </view>
+          </view>
+        </scroll-view>
+      </block>
+
+    </view>
+    <view class="box" hidden="{{paramsObj.title_type == '1'}}">
+      <view class="invoice-type">税号<text class="no-tax">（若无税号请填写无或无税号）</text></view>
+      <input class="invoice-title" placeholder="请填写税号..." value="{{paramsObj.tax_number}}"
+        placeholder-class="placeholder-class" bindinput="inputChange" bindblur="regChinese" data-name='tax_number'></input>
+    </view>
+    <view class="box" hidden="{{paramsObj.paper_elec == '1'}}">
+      <view class="invoice-type">电子发票接收邮箱</view>
+      <input class="invoice-title" placeholder="请填写接收邮箱..." value="{{paramsObj.email}}"
+        placeholder-class="placeholder-class" bindinput="inputChange" data-name='email'></input>
+    </view>
+    <view class="box" hidden="{{paramsObj.paper_elec == '1' || paramsObj.title_type == '1'}}">
+            <view class="invoice-type">开户行和账户</view>
+            <input class="invoice-title" placeholder="请填写开户行和账户..." value="{{paramsObj.bank_account}}"
+              placeholder-class="placeholder-class" bindinput="inputChange" data-name='bank_account'></input>
+          </view>
+    <view class="box other-info-wrapper" hidden="{{paramsObj.paper_elec == '0' || paramsObj.title_type == '1'}}">
+      <view class="other-info">
+        <view class="other-info-title" catch:tap="showOther" data-id="1">
+          <text>更多内容</text>
+          <image class="show-other {{ showOtherInfo1 ? 'rotate' : '' }}" src="/assets/images/arrow-down.png"></image>
+        </view>
+        <view style="height: {{ showOtherInfo1 ? '396rpx' : 0 }};" class="other-info-hidden">
+          <view class="other-info-box">
+            <view class="invoice-type">地址和手机号</view>
+            <input class="invoice-title" placeholder="请填写地址和手机号..." value="{{paramsObj.addr_tel}}"
+              placeholder-class="placeholder-class" bindinput="inputChange" data-name='addr_tel'></input>
+          </view>
+          <view class="other-info-box">
+            <view class="invoice-type">开户行和账户</view>
+            <input class="invoice-title" placeholder="请填写开户行和账户..." value="{{paramsObj.bank_account}}"
+              placeholder-class="placeholder-class" bindinput="inputChange" data-name='bank_account'></input>
+          </view>
+          <!-- <view class="other-info-box">
+            <view class="invoice-type">备注说明</view>
+            <input class="invoice-title" placeholder="请填写备注说明..." value="{{paramsObj.comment}}"
+              placeholder-class="placeholder-class" bindinput="" data-name='comment'></input>
+          </view> -->
+        </view>
+      </view>
+    </view>
+    <view class="box">
+      <view class="invoice-type">开票信息</view>
+      <view class="box-warrap">
+        <view class="invoice-list" wx:for="{{invoiceList}}" wx:key="index">
+          <view class="invoice-list-title {{ index !== 0 ? 'margintop40' : '' }}">
+            <image class="invoice-list-titleimg" src="../../../../assets/images/minus.png" catch:tap="deleteInvoice"
+              data-index="{{ index }}"></image>
+            <view class="invoice-list-titletext">发票{{ index + 1 }}信息（金额：<text
+                class="red-color">{{ item.countPrice }}</text>元）</view>
+          </view>
+          <view class="invoice-list-item" wx:for="{{item.list}}" wx:for-item="node" wx:for-index="nodeid"
+            wx:key="nodeid">
+            <image class="invoice-list-titleimg" src="../../../../assets/images/minus.png" wx:if="{{nodeid==0}}"
+              catch:tap="deleteInvoice" data-item="{{ nodeid }}" data-index="{{ index }}"></image>
+            <view class="invoice-list-titleimg" wx:if="{{nodeid!==0}}"></view>
+            <view class="invoice-list-box">
+              <view class="invoice-type">单价</view>
+              <picker mode="selector" range="{{ invoiceNumber }}" range-key="{{'price'}}" disabled="{{ priceList.length <= 1 }}"
+                value="{{ node.priceindex }}" catchchange="changePrice" data-index="{{ index }}"
+                data-item="{{ nodeid }}">
+                <view class="choice-price-box">
+                  <input class="invoice-title placeholder-class" value="{{ invoiceNumber[node.priceindex].price }}" disabled
+                    placeholder-class="placeholder-class"></input>
+                  <image class="price-list-arrow" src="../../../../assets/images/arrow-down.png"></image>
+                </view>
+              </picker>
+              <view class="invoice-type matgintop48">单价人数</view>
+              <input type="number" class="invoice-title placeholder-class" placeholder="填写数量"
+                value="{{ node.number > 0 ? node.number : '' }}" placeholder-class="placeholder-class"
+                bindinput="inputItemNumber" data-item="{{ nodeid }}" data-index="{{ index }}"></input>
+            </view>
+          </view>
+          <image wx:if="{{ (item.list.length < invoiceNumber.length) && showAdd && !item.noadd}}" class="add-icon"
+            src="../../../../assets/images/add-icon.png" catch:tap="addInvoice" data-index="{{ index }}"></image>
+        </view>
+      </view>
+    </view>
+    <view class="addone-to-list">
+      <btn btn-text="添加发票" catchtap="addInvoice" data-index="{{-1}}"></btn>
+    </view>
+    <view class="bottom-box">
+      <view class="content"><text class="content-left">总金额</text><text class="content-right"
+          style="color: #F24724;">￥{{paramsObj.amount || 0}}</text></view>
+      <view class="content content-center"><text class="content-left">发票内容</text><text
+          class="content-right">{{invoiceContentObj[paramsObj.invoice_content]}}</text></view>
+      <view class="content"><text class="content-left">开票单位</text><text class="content-right">中国儿童中心</text></view>
+    </view>
+    <view class="box other-info-wrapper">
+      <view class="other-info">
+        <!-- <view class="other-info-title" catch:tap="showOther" data-id="2"> -->
+        <view class="other-info-title" catch:tap="" data-id="2">
+          <text>其他信息</text>
+          <!-- <image class="show-other {{ showOtherInfo2 ? 'rotate' : '' }}" src="/assets/images/arrow-down.png"></image> -->
+        </view>
+        <view style="height: {{ showOtherInfo2 ? (tempFilePath.length > 1 ? '660rpx' : '470rpx') : 0 }};"
+          class="other-info-hidden">
+          <view class="other-info-box">
+            <view class="invoice-type">备注说明</view>
+            <input class="invoice-title" placeholder="请填写备注说明..." value="{{paramsObj.comment}}"
+              placeholder-class="placeholder-class" bindinput="inputChange" data-name='comment'></input>
+          </view>
+          <view class="other-info-box">
+            <view class="invoice-type">上传发票信息照片</view>
+            <view class="choose-images">
+              <view class="relativeposition upload-box" wx:for="{{tempFilePath}}" wx:key="idnex">
+                <image class="upload-img" src="{{item}}" />
+                <image class="delete-img" src="../../../../assets/images/delete-item.png" catch:tap="deleteImg"
+                  data-index="{{index}}" />
+              </view>
+              <image class="upload-img" src="../../../../assets/images/uploadfile.png" catch:tap="upImage"
+                wx:if="{{canChoice > 0}}"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="commit">
+    <btn btn-text="提交" catchtap="checkInvoice"></btn>
+  </view>
+</view>

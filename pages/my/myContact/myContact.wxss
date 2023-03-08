@@ -1,0 +1,61 @@
+/* pages/my/myContact/myContact.wxss */
+page{
+    background:rgba(245,245,245,1);
+}
+.info-title{
+    margin: 32rpx 48rpx;
+    font-size:48rpx;
+    color:rgba(51,51,51,1);
+    line-height:80rpx;
+}
+.info-card{
+    display: flex;
+    flex-wrap:nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background:rgba(255,255,255,1);
+    padding: 48rpx;
+}
+.name-phone{
+    font-size:32rpx;
+    color:rgba(0,0,0,1);
+}
+.name-phone>input{
+    display: inline-block;
+}
+.name{
+    font-weight:500;
+    margin-right: 20rpx;
+}
+.profession-info{
+    font-size:28rpx;
+    color:rgba(153,153,153,1);
+    line-height:28rpx;
+    margin-top: 20rpx;
+}
+.company-name{
+    font-size:28rpx;
+    color:rgba(153,153,153,1);
+    line-height:28rpx;
+    margin-top: 20rpx;
+}
+.edit{
+    width:38rpx;
+    height:36rpx;
+}
+.btn{
+    height: 250rpx;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 48rpx 10rpx 48rpx;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #F5F5F5;
+}
+.leave-bottom{
+    height: 250rpx;
+}
+.full-height{
+    min-height: 100vh;
+}

@@ -1,0 +1,13 @@
+/* components/paging/paging.wxss */
+/* .paging-container .no-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 28rpx;
+  color: #92979e;
+}
+.paging-container .no-data .no-data-img {
+  width: 250rpx;
+  height: 250rpx;
+  margin: 120rpx 0 26rpx 0;
+} */

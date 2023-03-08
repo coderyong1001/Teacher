@@ -1,0 +1,8 @@
+<view class="share-order-wrapper {{showNoData ? 'gray percent100' : 'white'}}">
+  <paging showNoData="{{showNoData}}">
+    <div class="share-order-list"><invoice-list invoiceDataList="{{invoiceDataList}}" bind:setOrderData="setOrderData" id="invoice-list" /></div>
+  </paging>
+  <view class="btn-box">
+    <btn btnText='分享订单' bindtap="handleClick" />
+  </view>
+</view>

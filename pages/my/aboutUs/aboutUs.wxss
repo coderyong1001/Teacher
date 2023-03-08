@@ -1,0 +1,21 @@
+/* pages/my/aboutUs/aboutUs.wxss */
+.title{
+    font-size:48rpx;
+    font-weight:500;
+    color:rgba(1,131,137,1);
+    line-height:72rpx;
+    padding: 48rpx 48rpx 0 48rpx;
+}
+.our-info{
+    font-size:32rpx;
+    font-weight:500;
+    color:rgba(1,131,137,1);
+    line-height:58rpx;
+    padding: 42rpx 48rpx 0 48rpx;
+}
+.description{
+    font-size:28rpx;
+    color:rgba(51,51,51,1);
+    line-height:50rpx;
+    padding: 48rpx;
+}

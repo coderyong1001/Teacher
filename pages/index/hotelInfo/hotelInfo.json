@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "住宿信息",
+  "usingComponents": {
+    "btn": "/components/btn/btn"
+  }
+}

@@ -1,0 +1,63 @@
+<view class="city-container">
+  <!-- 搜索 -->
+  <view class="city-header-container">
+    <view class="city-box {{isFocus ? 'focusStyle' : ''}}">
+      <icon type="search" size="14" color="#B2B2B2" src="/assets/images/search-icon.png" class="search-icon" />
+      <input placeholder="搜索" class="city-search" bindfocus="focusInput" bindblur="blurInput" confirm-type="search"
+        bindconfirm="confirmSearch" bindinput="inputSearch" value="{{searchVal}}" />
+    </view>
+    <view class="cancel-btn" hidden="{{!isFocus}}" bindtap="cancelSearch">取消</view>
+  </view>
+  <block wx:if="{{!isSearch}}">
+    <!-- 全部城市 -->
+    <view class="city-title">全部城市</view>
+    <view class="current-hot-box no-pb">
+      <view class="current-hot-citys" bindtap='selectCity' data-fullname="{{null}}">全部城市</view>
+    </view>
+    <!-- 当前城市 -->
+    <view class="city-title">当前城市</view>
+    <view class="current-hot-box">
+      <view class="location-box" bindtap="clickLocation">
+        <view class="current-hot-citys">{{currentCity}}</view>
+        <view class="openLocation">开启GPS定位</view>
+      </view>
+
+    </view>
+    <!-- 热门城市 -->
+    <view class="city-title">热门城市</view>
+    <view class="current-hot-box no-pb">
+      <block wx:for="{{hotCity}}" wx:key="index">
+        <view class="current-hot-citys" bindtap='selectCity' data-fullname="{{item.fullname}}">{{item.fullname}}</view>
+      </block>
+    </view>
+    <!-- 城市列表 -->
+    <scroll-view>
+      <block class='item' wx:for="{{cityData}}" wx:for-index="idx" wx:for-item="group" wx:key="key">
+        <view class='city-title' id="{{idx}}">{{idx}}</view>
+        <view class="city-item onepx-border-bottom" wx:for="{{group}}" wx:key="key" data-fullname="{{item.fullname}}"
+          data-lat="{{item.location.lat}}" data-lng="{{item.location.lng}}" bindtap='selectCity'>{{item.fullname}}
+        </view>
+      </block>
+    </scroll-view>
+
+    <!-- 右边字母 -->
+    <View class="city-right" catchtouchstart="searchStart" catchtouchmove="searchMove" catchtouchend="searchEnd">
+      <view wx:for="{{letter}}" wx:key="index" data-item='{{item}}' bindtouchstart="getLetter" bindtouchend="setLetter">
+        {{item}}
+      </view>
+    </View>
+    <!-- 选择显示 -->
+    <view hidden="{{hidden}}" class="letter-box">
+      {{showLetter}}
+    </view>
+  </block>
+
+  <block wx:if="{{isSearch}}">
+    <block class='item' wx:for="{{searchList}}" wx:key="index">
+      <view class="city-item onepx-border-bottom" data-lat="{{item.location.lat}}" data-lng="{{item.location.lng}}"
+        bindtap='selectCity' data-fullname="{{item.fullname}}">
+        {{item.fullname}}
+      </view>
+    </block>
+  </block>
+</view>

@@ -1,0 +1,54 @@
+.singin-item{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 48rpx;
+    margin-bottom: 2rpx;
+    background:rgba(255,255,255,1);
+    border-bottom: 1rpx solid #f5f5f5;
+}
+.item-left{
+    float: 1 1 auto;
+}
+.activity-name{
+    font-size:32rpx;
+    font-weight:500;
+    line-height:32rpx;
+}
+.activity-time{
+    font-size:32rpx;
+    line-height:32rpx;
+    margin-top: 18rpx;
+}
+.activity-description{
+    font-size:28rpx;
+    color:rgba(153,153,153,1);
+    line-height:28rpx;
+    margin-top: 18rpx;
+}
+.item-right{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex:0 0 150rpx;
+}
+.item-right image{
+    flex:0 0 16rpx;
+    width:16rpx;
+    height:26rpx;
+}
+.activity-time-train{
+    font-size:28rpx;
+    color:rgba(51,51,51,1);
+    line-height:28rpx;
+    margin-top: 20rpx;
+}
+.status{
+    flex: 1 1 auto;
+    font-size:28rpx;
+    color:rgba(51,51,51,1);
+    line-height:28rpx;
+    text-align: right;
+    margin-right: 16rpx;
+}

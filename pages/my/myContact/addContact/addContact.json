@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "添加同伴",
+  "usingComponents": {
+    "btn": "/components/btn/btn",
+    "form-input": "/components/form-input/form-input"
+  },
+  "enablePullDownRefresh": false
+}

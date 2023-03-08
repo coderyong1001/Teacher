@@ -1,0 +1,69 @@
+.order-info-container {
+  padding: 48rpx 48rpx 0 48rpx;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #fff;
+  .order-info-box {
+    display: flex;
+    justify-content: space-between;
+    // height: 128rpx;
+    padding-bottom: 48rpx;
+    
+    .info-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 28rpx;
+      width: 100%;
+      
+      .order-num {
+        font-size: 32rpx;
+        font-weight: 500;
+        color: #000;
+        // line-height: 32rpx;
+        max-width: 572rpx;
+      }
+
+      .activity-name,.activity-time {
+        // line-height: 28rpx;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+      .activity-name {
+        color: #333;
+        .pay-status {
+          font-size: 28rpx;
+          color: #13AB49;
+          // line-height: 28rpx;
+        }
+        .course_name {
+          max-width: 470rpx;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+        
+      }
+      .activity-time {
+        color: #999;
+        .pay-money {
+          font-size: 36rpx;
+          font-weight: 500;
+          color: #F24724;
+          line-height: 50rpx;
+        }
+      }
+    }
+  }
+  .select-box {
+    position: absolute;
+    top: 24rpx;
+    right: 24rpx;
+    .selected {
+      width: 44rpx;
+      height: 44rpx;
+    }
+  }
+}

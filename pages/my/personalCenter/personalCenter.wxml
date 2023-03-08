@@ -1,0 +1,7 @@
+<view class="personal-container">
+  <cell cellItem="{{cellItem}}" 
+    bind:setHead="setHead" 
+    bind:setWorkExp="setWorkExp"
+    bind:setBirth="setBirth" />
+
+</view>

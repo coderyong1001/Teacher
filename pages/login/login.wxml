@@ -1,0 +1,9 @@
+<view class="login-container">
+  <view class="common-title">手机动态码登录</view>
+  <view class="common-subtitle">手机号码</view>
+  <view class="telphone-box input-box onepx-border-bottom">
+    <input class="telInput" placeholder="请输入手机号码" value="{{tel}}" type="number" bindinput="inputPhone" />
+    <text class="notice" hidden="{{isHidden}}" >请输入正确的手机号</text>
+  </view>
+  <btn btnText="获取验证码" bindtap="handleClick" />
+</view>

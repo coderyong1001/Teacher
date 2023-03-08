@@ -1,0 +1,14 @@
+<view class="check-container">
+  <view class="check-wrapper">
+    <view class="check-box">
+      <icon type="success" size="130rpx" color="#018389" />
+    </view>
+    <view class="submit-success">订单提交成功</view>
+    <view class="submit-info">请等待师资培训部工作人员审核</view>
+    <view class="gointo-order">
+      <view class="cutdown">{{msgTime}}s后进入</view>
+      <view class="my-order-btn" bindtap="goMyOrder">我的订单</view>
+    </view>
+  </view>
+
+</view>

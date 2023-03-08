@@ -1,0 +1,99 @@
+/* components/tab-control/tab-control.wxss */
+.tabtab {
+  position: relative;
+  background: #ffffff;
+}
+
+.tap-container {
+  display: flex;
+  align-items: center;
+  margin: 34rpx 0;
+}
+
+.tap-box {
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+.tap-box .tap-text {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 200rpx;
+}
+.tap-box .triangle {
+  width: 24rpx;
+  height: 12rpx;
+  transition: all ease 0.3s;
+}
+
+.lists-box{
+  background: #fff;
+  padding-bottom: 40rpx;
+}
+
+.control-item {
+  font-size: 30rpx;
+  line-height: 42rpx;
+  padding: 40rpx 0 0 48rpx;
+  background: #ffffff;
+}
+
+.grayness {
+  color: #666666;
+}
+
+.blue {
+  color: #018389;
+}
+
+.translate {
+  transform: rotate(180deg);
+}
+
+.control-list-box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-top: 1rpx solid #f5f5f5;
+}
+
+.control-list {
+  width: 100%;
+  height: 2000rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(51, 51, 51, 0.5);
+  z-index: 10;  
+}
+
+/* .control-list .control-list-wrapper {
+  width: 100%;
+  height: 2000rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(51, 51, 51, 0.5);
+  z-index: 10;
+} */
+.tap-container-click{
+  display: flex;
+  align-items: center;
+}
+.tap-box-click{
+  font-size:30rpx;
+  font-weight:500;
+  line-height:30rpx;
+  flex: 1;
+  text-align: center;
+  padding-top: 30rpx;
+  height: 90rpx;
+  box-sizing: border-box;
+}
+.black{
+  color: #333333;
+  border-bottom: 8rpx solid #018389;
+}

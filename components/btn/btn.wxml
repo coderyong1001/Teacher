@@ -1,0 +1,3 @@
+<view class="btn-container {{noMt ? 'no-mt' : ''}}">
+  <button class="btn" bindtap='clickBtn'>{{btnText}}</button>
+</view>

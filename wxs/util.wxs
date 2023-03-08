@@ -1,0 +1,78 @@
+//格式化显示执教年份过滤器
+var formWorkingYear = function (data) {
+
+  if (!data) {
+    return '';
+  }
+
+  var nowData = getDate();
+  var year = nowData.getFullYear();
+  var month = nowData.getMonth() + 1;
+  var day = nowData.getDate();
+  var oldDate = data.split('-');
+  var oldYear = parseInt(oldDate[0]);
+  var oldMonth = parseInt(oldDate[1]);
+  var oldDay = parseInt(oldDate[2]);
+  var diffYear = year - oldYear;
+
+  if(month - oldMonth < 0 && diffYear > 0) {
+    diffYear = diffYear -1;
+  }else{
+    if(day - oldDay < 0 && diffYear > 0) {
+      diffYear = diffYear -1;
+    }
+  }
+
+  diffYear = diffYear < 0 ? 0 : diffYear;
+  return diffYear + '年';
+}
+
+//格式化显示电话过滤器
+var formTel = function (tel) {
+  while (tel.length < 11){
+    tel += ' ';
+  }
+  var three = tel.substring(0, 3);
+  var four1 = tel.substring(3, 7);
+  var four2 = tel.substring(7, 11);
+  var end = tel.substring(11);
+  return three + ' ' + four1 + ' ' + four2 + ' ' + end;
+}
+
+//显示数组
+var showArray = function (arr) {
+  if (typeof arr === 'object') {
+    if (arr[0] === arr[1])
+      return arr[1] + arr[2]
+    else
+      return arr.join('')
+  } else {
+    return '';
+  }
+}
+
+var formatSex = function (value) {
+  if (value === 'male' || value == 0) {
+    return '男';
+  }
+  if (value === 'female' || value == 1) {
+    return  '女';
+  }
+  if (value === '男' || value === '女' ) {
+    return value;
+  }
+}
+
+var formateDate = function ( start, end ){
+  var starts = start.split('-');
+  var ends = end.split( '-' );
+  return starts.join('.') + '-' + ends.join('.');
+}
+
+module.exports = {
+  formWorkingYear: formWorkingYear,
+  formTel: formTel,
+  showArray: showArray,
+  formatSex: formatSex,
+  formateDate: formateDate
+}

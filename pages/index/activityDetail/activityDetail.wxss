@@ -1,0 +1,270 @@
+
+.activity-contariner {
+  color: #333;
+  position: relative;
+  padding-bottom: 186rpx;
+}
+/* 头部 */
+.header-contariner {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;  
+}
+.detail-bg {
+  position: absolute;
+  width: 100%;
+  height: 260rpx;
+  left: 0;
+  top: 0;
+}
+.banner {
+  width: 654rpx;
+  height: 360rpx;
+  position: relative;
+  box-shadow: 0 0rpx 30rpx 30rpx rgba(52,52,52,0.1)
+}
+.activity-theme {
+  width: 142rpx;
+  height: 52rpx;
+  background:rgba(0,0,0,0.5);
+  border-radius: 4rpx;
+  font-size: 28rpx;
+  color:rgba(255,255,255,1);
+  line-height: 52rpx;
+  text-align: center;
+  position: absolute;
+  bottom: 24rpx;
+  right: 24rpx;
+}
+.activity-banner {
+  width: 654rpx;
+  height: 360rpx;
+  background:rgba(255,255,255,1);
+  border-radius: 8rpx;
+}
+/* 活动信息介绍 */
+.activity-info {
+  padding: 0 48rpx;
+}
+.activity-info .activity-title {
+  font-size: 42rpx;
+  font-weight:500;
+  line-height: 62rpx;
+  margin-top: 40rpx;
+}
+.money-box {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 0 32rpx 0;
+}
+.money-box .money {
+  font-size: 52rpx;
+  font-weight:500;
+  color:rgba(242,71,36,1);
+  line-height: 52rpx;
+  margin-right: 20rpx;
+}
+.common-info-box {
+  display: flex;
+  align-items: center;
+  padding: 32rpx 0;
+  font-size: 028rpx;
+}
+.common-info-box .total-num {
+  margin-right: 40rpx;
+}
+.pos-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pos-box .pos-text {
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+}
+.pos-box .pos-text .pos-text-box {
+  width: 600rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.pos-box .pos-text .mini-pos {
+  width: 26rpx;
+  height: 30rpx;
+  margin-right: 12rpx;
+}
+
+/* 空白间隔 */
+.space {
+  height: 16rpx;
+  background:rgba(245,245,245,1);
+}
+/* 活动内容 */
+.content-contariner {
+  padding: 0 48rpx;
+}
+.activity-subtitle {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #018389;
+  line-height: 50rpx;
+  margin: 80rpx 0 24rpx 0;
+}
+/* 证书 */
+.certificate {
+  width: 654rpx;
+  height: 266rpx;
+  background:rgba(238,238,238,1);
+  border-radius: 4rpx;
+  box-shadow: 0 4rpx 74rpx 0rpx rgba(0, 0, 0, 0.21)
+}
+.activity-subtitle.no-mb {
+  margin-bottom: 0rpx;
+}
+.content,.class-location {
+  font-size: 34rpx;
+  color:#333;
+  line-height: 48rpx;
+}
+.content{
+  word-break: break-all;
+}
+.class-location {
+  margin-top: 12rpx;
+}
+.time-arrangement {
+  white-space:nowrap;
+  margin-bottom: 24rpx;
+}
+.time-arrangement .time-item {
+  display: inline-block;
+  width: 134rpx;
+  height: 56rpx;
+  border-radius: 4rpx;
+  border:1px solid rgba(153,153,153,1);
+  line-height: 56rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #999;
+  margin-right: 24rpx;
+}
+.time-arrangement .time-item.active {
+  border-color: rgba(1,131,137,1);
+  color:rgba(1,131,137,1);
+}
+.time-arrangement-title {
+  font-size: 30rpx;
+  color:rgba(1,131,137,1);
+  line-height: 44rpx;
+  margin: 26rpx 0;
+}
+.recommend {
+  font-size: 34rpx;
+  color:rgba(51,51,51,1);
+  line-height: 50rpx;
+  margin: 24rpx 0 20rpx 0;
+}
+.hotel-box {
+  font-size: 30rpx;
+  line-height: 50rpx;
+}
+.hotel-price {
+  margin-bottom: 20rpx;
+}
+
+/* 底部按钮 */
+.btn-box {
+  display: flex;
+  height: 98rpx;
+  font-size: 30rpx;
+  font-weight:500;
+  position: fixed;
+  bottom: 0;
+}
+.btn-box .business-contact {
+  width: 232rpx;
+  background:rgba(255,255,255,1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1rpx solid #D8D8D8;
+  box-sizing: border-box;
+}
+.btn-box .sign-up {
+  width: 518rpx;
+  background:#018389;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+}
+.sign-up::after {
+  border: none;
+}
+
+/* 报名、会务联系人 */
+.contact-box {
+  width: 560rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  box-sizing: border-box;
+  
+}
+.contact-person-box {
+  padding: 50rpx 70rpx 0 70rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-type {
+  font-size: 34rpx;
+  font-weight:500;
+  color: #333;
+  line-height: 34rpx;
+  margin: 24rpx;
+}
+.contact-type.no-mt {
+  margin-top: 0;
+}
+.contact-content {
+  font-size: 30rpx;
+  color: #666;
+  line-height: 44rpx;
+}
+.contact-content .contact-person {
+  text-decoration: underline;
+}
+.contact-btn {
+  height: 96rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34rpx;
+  color: #018389;
+  border-top: 1rpx solid #eee;
+  margin-top: 34rpx;
+}
+.courseImg {
+  width: 100%;
+}
+.hotel-image {
+  width: 640rpx;
+}
+.recommend-warning {
+  font-size: 26rpx;
+  line-height: 32rpx;
+  font-weight: 400;
+  color: #333333;
+  text-indent: 50rpx;
+  margin-bottom: 20rpx;
+}
+.schedule_pic{
+  width: 100%;
+}

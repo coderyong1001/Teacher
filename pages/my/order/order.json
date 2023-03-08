@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "我的订单",
+  "usingComponents": {
+    "tab-control": "/components/tab-control/tab-control",
+    "order-list": "/components/order-list/order-list",
+    "btn": "/components/btn/btn",
+    "paging": "/components/paging/paging"
+  },
+  "enablePullDownRefresh": true
+}

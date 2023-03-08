@@ -1,0 +1,11 @@
+<view class="paging-container">
+  <block wx:if="{{showNoData}}">
+    <view class="no-data">
+      <image src="/assets/images/no-data.png" class="no-data-img" />
+      <view>哎呀，里面没有内容…</view>
+    </view>
+  </block>
+  <block wx:else>
+    <slot />    
+  </block>
+</view>

@@ -1,0 +1,37 @@
+<!-- <wxs src="../../../wxs/util.wxs" module="filter"></wxs> -->
+<view class="full-height">
+  <view class="info-title">我的信息</view>
+  <view class="info-card">
+    <view class="info-detail">
+      <view class="name-phone">
+        <text class="name">{{myInfo.name}}</text>
+        <text class="phone">{{myInfo.tel}}</text>
+      </view>
+      <view class="profession-info">单位：{{myInfo.company}}</view>
+      <view class="company-name">地址：{{myInfo.address}}</view>
+    </view>
+  </view>
+  <view class="info-title">我的同伴</view>
+  <view>
+    <block wx:for="{{myConcatList}}" wx:key="index">
+      <move-del data-id="{{item.id}}" bind:del="del">
+        <view class="info-card">
+          <view class="info-detail">
+            <view class="name-phone">
+              <text class="name">{{item.name}}</text>
+              <text class="phone">{{item.tel}}</text>
+            </view>
+            <view class="profession-info">单位：{{item.company || ""}}</view>
+            <view class="company-name">地址：{{item.combineAddress}}</view>
+          </view>
+          <image class="edit" data-id="{{item.id}}" src="/assets/images/edit.png" bind:tap="toAddContact">
+          </image>
+        </view>
+      </move-del>
+    </block>
+  </view>
+</view>
+<view class="leave-bottom"></view>
+<view class="btn">
+  <btn btn-text="+添加同伴" bind:handleClick="toAddContact"></btn>
+</view>

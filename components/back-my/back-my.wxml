@@ -1,0 +1,5 @@
+<view class="back-my-container {{pagePay ? 'pagePay' : ''}}">
+  <button class="back-my-btn" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">
+    <image src="/assets/images/back-my-icon.png" class="back-my" />
+  </button>
+</view>

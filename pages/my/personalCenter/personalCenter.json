@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "个人中心",
+  "usingComponents": {
+    "cell": "/components/cell/cell"
+  },
+  "enablePullDownRefresh": true
+}

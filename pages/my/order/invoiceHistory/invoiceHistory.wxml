@@ -1,0 +1,19 @@
+<wxs module="filter" src="../../../../wxs/format_date.wxs"></wxs>
+<view class="history-container percent100 {{showNoData?'gray':'white'}}">
+  <paging showNoData="{{showNoData}}">
+    <block wx:for="{{invoiceHistoryList}}" wx:key="index">
+      <view class="invoice-history-item onepx-border-bottom {{index === invoiceHistoryList.length - 1 ? 'no-bt' : ''}}"
+        bindtap="goDetail" data-id="{{item.id}}">
+        <view class="invoice-time">开票时间：{{filter.getMonthDayHM(item.create_time, 'YYYY.MM.DD hh:mm:ss')}}</view>
+        <view class="invoice-type-status">
+          <view class="invoice-type">{{paper_elec_obj[item.paper_elec]}}</view>
+          <view class="invoice-status">
+            <text>{{statusObj[item.status]}}</text>
+            <image class="arrow" src="/assets/images/arrow.png"></image>
+          </view>
+        </view>
+        <view class="invoice-money">¥{{item.amount}}</view>   
+      </view>
+    </block>
+  </paging>
+</view>

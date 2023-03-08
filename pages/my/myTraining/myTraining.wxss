@@ -1,0 +1,64 @@
+/* pages/my/myTraining/myTraining.wxss */
+.box {
+  padding: 48rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.course-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.course-name {
+  font-size: 32rpx;
+  line-height: 32rpx;
+  color: #000000;
+}
+.course-status {
+  flex: 0 0 160rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  font-weight: 400;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.arrow {
+  width: 16rpx;
+  height: 26rpx;
+  margin-left: 16rpx;
+}
+.course-time {
+  font-size:28rpx;
+  font-weight:300;
+  color:rgba(51,51,51,1);
+  line-height:28rpx;
+  margin: 20rpx 0;
+}
+.course-place {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.course-address {
+  font-size:28rpx;
+  font-weight:300;
+  color:rgba(51,51,51,1);
+  line-height:28rpx;
+}
+.questionnaire {
+  flex: 0 0 250rpx;
+  text-align: right;
+  font-size:28rpx;
+  font-weight:300;
+  color:rgba(1,131,137,1);
+  line-height:28rpx;
+  text-decoration: underline;
+}
+.web-view {
+  position: fixed;
+  top: 0;
+  width: 100vh;
+  height: 100vw;
+  z-index: 3;
+}

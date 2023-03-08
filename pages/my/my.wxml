@@ -1,0 +1,18 @@
+<view>
+  <view class="header-container">
+    <view class="header-box" bindtap="clickPersonal">
+      <view class="header-pic-box">
+        <image src='{{userInfo.pic}}' class="header-pic"/>
+        <view class="userinfo">
+          <view class="username">{{userInfo.name}}</view>
+          <view class="user-pos">{{userInfo.city}}</view>
+        </view>
+      </view>
+      <image src="/assets/images/white-arrow.png" class="arrow" />
+    </view>
+  </view>
+  <cell cellItem="{{cellItem}}" />
+  <view class="logout-box">
+    <view class="logout" bind:tap="logOut">退出登录</view>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+/* components/form/form.wxss */
+.single-radio {
+  margin-right: 106rpx;
+}
+.radio-value {
+  margin-right: 12rpx;
+  font-size: 36rpx;
+  color:rgba(51,51,51,1);
+}
+.required {
+  display: flex;
+  align-items: center;
+}
+.required .star {
+  color: #F24724;
+}
+.placeholder-text {
+  font-size: 36rpx;
+  color: #999;
+  line-height: 50rpx;
+}
+.input-text {
+  font-size: 36rpx;
+  color:rgba(51,51,51,1);
+  line-height: 50rpx;
+}
+.input-box-arrow {
+  width: 20rpx;
+  height: 12rpx;
+  position: absolute;
+  right: 0;
+  bottom: 46rpx;
+}
+.relative-position {
+  position: relative;
+}

@@ -1,0 +1,489 @@
+.pay-container {
+  width: 100%;
+  padding-bottom: 200rpx;
+}
+.pay-container .radio-value {
+  margin-right: 12rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+.pay-container .radio {
+  transform: scale(0.8);
+}
+.pay-container .pay-thirdtitle {
+  font-size: 26rpx;
+  line-height: 36rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+}
+.pay-container .pay-thirdtitle.mt16 {
+  margin-top: 32rpx;
+}
+.pay-container .offline-pay {
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+}
+.pay-container .offline-pay .pay-icon {
+  margin-left: 12rpx;
+}
+.pay-container .pay-header {
+  background: #018389;
+  color: #fff;
+  padding: 34rpx 48rpx 0 48rpx;
+  height: 428rpx;
+  box-sizing: border-box;
+}
+.pay-container .pay-header .pay-title {
+  font-size: 48rpx;
+  font-weight: 500;
+  line-height: 80rpx;
+}
+.pay-container .pay-header .activity-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40rpx;
+}
+.pay-container .pay-header .activity-info .left .activity-name {
+  font-size: 34rpx;
+  font-weight: 500;
+  line-height: 48rpx;
+}
+.pay-container .pay-header .activity-info .left .activity-time {
+  font-size: 30rpx;
+  line-height: 42rpx;
+  margin-top: 12rpx;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+}
+.pay-container .pay-header .activity-info .right .pay-logo {
+  width: 280rpx;
+  height: 154rpx;
+  background: #ffffff;
+  border-radius: 8rpx;
+}
+.pay-container .hotel-info-box {
+  width: 654rpx;
+  padding: 48rpx;
+  display: flex;
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  border-radius: 8rpx;
+  margin-bottom: 40rpx;
+}
+.pay-container .hotel-info-box .subtitle {
+  font-weight: 600;
+  color: #333333;
+}
+.subtitle:before{
+  content: ' * ';
+  color: red;
+  font-size: 15px;
+}
+.pay-container .hotel-info-box .value-box {
+  display: flex;
+  align-items: center;
+}
+.pay-container .hotel-info-box .value-box .value-text {
+  color: #999999;
+}
+.pay-container .hotel-info-box .value-box .arrow {
+  width: 16rpx;
+  height: 26rpx;
+  margin-left: 48rpx;
+}
+.pay-container .pay-content {
+  background: #f5f5f5;
+  /* 上传文件 */
+}
+.pay-container .pay-content .pay-content-wrapper {
+  transform: translateY(-60rpx);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pay-container .pay-content .minus-icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+.pay-container .pay-content .pay-card {
+  width: 654rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  color: #333;
+  margin-bottom: 40rpx;
+}
+.pay-container .pay-content .pay-card.no-mb {
+  margin-bottom: 0;
+}
+.pay-container .pay-content .pay-card.pd16 {
+  padding-bottom: 32rpx;
+}
+.pay-container .pay-content .pay-card .pay-card-top {
+  padding: 0 48rpx;
+}
+.pay-container .pay-content .pay-card .pay-card-top .pay-subtitle {
+  font-size: 30rpx;
+  font-weight: 600;
+  line-height: 42rpx;
+  margin: 48rpx 0 32rpx 0;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 26rpx;
+  /* align-items: center; */
+  margin-top: 32rpx;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info .hotel-info {
+  width: 556rpx;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info.no-border-bottom {
+  border-bottom: none;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info .pay-card-left {
+  display: flex;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info .pay-card-left .info-box {
+  font-size: 26rpx;
+  height: 160rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info .pay-card-left .info-box .name {
+  font-size: 30rpx;
+  font-weight: 500;
+  line-height: 42rpx;
+  width: 360rpx;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info .pay-card-left .info-box .name .person-name {
+  margin-right: 20rpx;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info .pay-card-left .info-box .name .tel-phone {
+  font-size: 26rpx;
+  color: #999999;
+  line-height: 36rpx;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info .pay-card-left .info-box .company,
+.pay-container .pay-content .pay-card .pay-card-top .person-info .pay-card-left .info-box .address {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 350rpx;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info .head-pic {
+  width: 142rpx;
+  height: 160rpx;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info .choose-room {
+  display: flex;
+  margin-bottom: 32rpx;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info .choose-room .room-box {
+  width: 154rpx;
+  height: 58rpx;
+  border-radius: 2rpx;
+  border: 1rpx solid #EDEDED;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  color: #333;
+  margin-right: 22rpx;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info .choose-room .room-box.selected {
+  border-color: #018389;
+  color: #018389;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info .choose-room .room-box .room-icon {
+  height: 40rpx;
+  margin-right: 8rpx;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info .choose-room .room-box .room-icon.single {
+  width: 16rpx;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info .choose-room .room-box .room-icon.double {
+  width: 32rpx;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info .choose-room .room-box .room-icon.triple {
+  width: 50rpx;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info .radio-group {
+  display: flex;
+  justify-content: space-between;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info .radio-group.radio-group-pay {
+  margin-bottom: 32rpx;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info .radio-group .num-radio .radio-box {
+  display: flex;
+  align-items: center;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info .radio-group .num-radio .radio-box .num-input {
+  font-size: 20rpx;
+  width: 102rpx;
+  height: 56rpx;
+  margin-right: 8rpx;
+  border-radius: 2rpx;
+  opacity: 0.35;
+  border: 1rpx solid #979797;
+  box-sizing: border-box;
+  text-align: center;
+  color: #000;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info .hotel-radio-group .hotel-radio .hotel-radio-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info .remark-content {
+  padding-right: 48rpx;
+  width: 558rpx;
+}
+.pay-container .pay-content .pay-card .pay-card-top .person-info .remark-content .remark-text {
+  width: 100%;
+}
+.pay-container .pay-content .pay-card .pay-card-bottom {
+  border-top: 1rpx solid #f5f5f5;
+  display: flex;
+  justify-content: flex-end;
+  padding: 30rpx 48rpx 30rpx 0;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #018389;
+}
+.pay-container .pay-content .pay-card .card-no-data {
+  font-size: 26rpx;
+  color: #999;
+  line-height: 36rpx;
+  margin-bottom: 32rpx;
+}
+.pay-container .pay-content .uploadfile {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 36rpx;
+}
+.pay-container .pay-content .uploadfile .uploadfile-item {
+  margin-right: 50rpx;
+  position: relative;
+}
+.pay-container .pay-content .uploadfile .uploadfile-item .delete-item {
+  width: 28rpx;
+  height: 28rpx;
+  position: absolute;
+  right: 0;
+}
+.pay-container .pay-content .uploadfile .add-file {
+  width: 200rpx;
+  height: 150rpx;
+}
+.pay-container .pay-btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 48rpx;
+  box-shadow: 0px -4rpx 6rpx 0px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 99999;
+  background: #fff;
+  box-sizing: border-box;
+}
+.pay-container .pay-btn-container .pay-text {
+  font-size: 30rpx;
+  color: #333;
+  line-height: 42rpx;
+}
+.pay-container .pay-btn-container .dollar {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #f24724;
+  line-height: 30rpx;
+  margin: 0 8rpx;
+}
+.pay-container .pay-btn-container .total-money {
+  font-size: 44rpx;
+  font-weight: 500;
+  color: #f24724;
+  line-height: 44rpx;
+}
+.pay-container .pay-btn-container .pay-detail {
+  font-size: 26rpx;
+  color: #018389;
+  line-height: 36rpx;
+  display: flex;
+  align-items: center;
+}
+.pay-container .pay-btn-container .pay-detail .pay-triangle {
+  width: 20rpx;
+  height: 12rpx;
+  margin-left: 6rpx;
+  transition: all 0.3s;
+}
+.pay-container .pay-btn-container .pay-detail .pay-triangle.active {
+  transform: rotate(180deg);
+}
+.pay-container .pay-btn-container .pay-submit {
+  width: 192rpx;
+  height: 98rpx;
+  background: #018389;
+  border-radius: 4rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.pay-container .fee-detail {
+  width: 654rpx;
+  height: 216rpx;
+  position: absolute;
+  bottom: -200rpx;
+  left: 50%;
+  transform: translateX(-327rpx);
+  padding: 48rpx;
+  box-sizing: border-box;
+  color: #333;
+  transition: all 0.3s;
+}
+.pay-container .fee-detail.on {
+  bottom: 194rpx;
+}
+.pay-container .fee-detail .fee-detail-icon {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.pay-container .fee-detail .fee-detail-container {
+  position: relative;
+  z-index: 99991;
+}
+.pay-container .fee-detail .fee-detail-container .fee-detail-text {
+  font-size: 30rpx;
+  font-weight: 500;
+  line-height: 42rpx;
+  padding-bottom: 20rpx;
+}
+.pay-container .fee-detail .fee-detail-container .activity-name-box {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20rpx;
+  font-size: 26rpx;
+  line-height: 36rpx;
+}
+.pay-container .fee-detail .fee-detail-container .activity-name-box .act-money {
+  color: #f24724;
+}
+.pay-container .add-person-container {
+  width: 100%;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  bottom: -750rpx;
+  z-index: 9999999;
+  transition: all 0.3s;
+}
+.pay-container .add-person-container.on {
+  bottom: 0rpx;
+}
+.pay-container .add-person-container .add-btn-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 32rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #333;
+  box-sizing: border-box;
+}
+.pay-container .add-person-container .add-btn-box .confirm {
+  color: #018389;
+}
+.pay-container .add-person-container .add-item-box {
+  height: 224rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 48rpx;
+}
+.pay-container .add-person-container .add-item-box .item-left-box {
+  display: flex;
+  align-items: center;
+}
+.pay-container .add-person-container .add-item-box .item-left-box .choose-person-box {
+  margin-right: 48rpx;
+}
+.pay-container .add-person-container .add-item-box .item-left-box .choose-person-box .checked .wx-checkbox-input {
+  background-color: #018389;
+}
+.pay-container .add-person-container .add-item-box .item-left-box .person-info-box .add-name {
+  color: #000;
+  font-size: 32rpx;
+}
+.pay-container .add-person-container .add-item-box .item-left-box .person-info-box .add-name .name-text {
+  font-weight: 500;
+  margin-right: 20rpx;
+}
+.pay-container .add-person-container .add-item-box .item-left-box .person-info-box .add-info-box {
+  font-size: 28rpx;
+  color: #999999;
+  line-height: 28rpx;
+}
+.pay-container .add-person-container .add-item-box .item-left-box .person-info-box .add-info-box.major {
+  margin: 20rpx 0;
+}
+.pay-container .add-person-container .add-item-box .item-right-box .edit {
+  width: 38rpx;
+  height: 36rpx;
+}
+.pay-container .add-person-container .add-btn {
+  background-color: #F5F5F5;
+  padding: 40rpx 48rpx;
+}
+.pay-container .QR_Code_group{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  opacity: 0.7;
+}
+.pay-container .QR_Code_group .textCode{
+  max-width: 500rpx;
+  font-size: 40rpx;
+  letter-spacing: 5rpx;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  margin: 50rpx;
+}
+.pay-container .QR_Code_group .imgCodeBtn{
+  position: absolute;
+  top: 50rpx;
+  right: 50rpx;
+  width: 70rpx;
+  height: 70rpx;
+  object-fit: cover;
+}
+.pay-container .QR_Code_group .imgCode{
+  width: 500rpx;
+  height: 500rpx;
+  object-fit: cover;
+}

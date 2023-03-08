@@ -1,0 +1,25 @@
+<view class="order-container {{showNoData ? 'gray no-pt no-pb percent100' : 'white'}}">
+  <view class="tab-control-box">
+    <tab-control bind:confirmChoice="confirmChoice" bind:setActive="setActive" tabList="{{tabList}}" id="tabControl" />
+  </view>
+  
+  <paging showNoData="{{showNoData}}">
+    <order-list orderList="{{orderList}}" bind:refresh="refresh" />
+  </paging>
+  <view class="order-btn-box">
+    <view class="invoice-btn-box">
+      <view class="invoice-btn" bindtap="invoice">开发票</view>
+      <view class="invoice-btn" bindtap="goInvoiceHistory">开票历史</view>
+    </view>
+    <view>
+      <btn btnText="收集订单" bind:handleClick="handleClick" noMt />
+    </view>
+  </view>
+  <view wx:if="{{!!imgCode}}" class="code-modal">
+    <view class="code-warp">
+      <image bind:longpress="saveImageHandler" class="code-img" src="{{imgCode}}" />
+      <view class="code-sutext">长按保存二维码</view>
+      <view class="code-confirm" bind:tap="saveImgCodeClickHandler">确定</view>
+    </view>
+  </view>
+</view>

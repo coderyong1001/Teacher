@@ -1,0 +1,24 @@
+.back-my-container {
+  position: fixed;
+  right: 44rpx;
+  bottom: 80rpx;
+  z-index: 999;
+}
+.back-my-container.pagePay {
+  bottom: 200rpx;
+}
+.back-my-btn {
+  background-color: transparent;
+  /* width: 88rpx; */
+  height: 114rpx;
+}
+.back-my-btn::after {
+  border: none;
+}
+.back-my {
+  width: 88rpx;
+  height: 114rpx;
+}
+button {
+  padding: 0;
+}

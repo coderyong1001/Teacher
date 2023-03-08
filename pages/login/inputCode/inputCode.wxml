@@ -1,0 +1,21 @@
+<view class="login-container">
+  <view class="common-title">
+    输入6位验证码
+  </view>
+  <view class="common-subtitle code">
+    6位验证码
+    <text class="notice" hidden="{{isHidden}}">请输入正确的验证码</text>
+  </view>
+  <view class='container'>
+    <view class='indentify-code'>
+      <block wx:for="{{codeLength}}" wx:key="index">
+        <input class='code-box {{code[index]?"active":""}}' catchtap='focusBox' value='{{code.length>=1?code[index]:""}}' disabled></input>
+      </block>
+    </view>
+    <input class='realCode' type="{{type}}" focus="{{isFocus}}" value="{{code}}" bindinput="inputCode" maxlength='{{codeLength}}' name="code" ></input>
+  </view>
+  <view class="cutdown" wx:if="{{!active}}">
+    <text>{{msgTime}}</text>秒后重新获取
+  </view>
+  <view class="cutdown" wx:if="{{active}}" bindtap="regainCode">重新获取</view>
+</view>

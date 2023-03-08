@@ -1,0 +1,13 @@
+<view style="height:{{statusHeight+navHeight}}px" hidden='{{false}}'></view>
+<view class='topbar'>
+  <view class='status' style="height:{{statusHeight}}px"></view>
+  <view class='navbar' style="height:{{navHeight}}px">
+    <view class='navbar_home' wx:id="{{header.isindex}}">
+      <image style="height:{{navHeight-30}}px" src='/assets/images/back.png' bindtap='backClick'></image>
+      <image style="height:{{navHeight-30}}px" src='/assets/images/home.png' bindtap='homeClick'></image>
+    </view>
+    <view class='navbar_title' style="height:{{navHeight}}px">
+      <view>{{header.title}}</view>
+    </view>
+  </view>
+</view>

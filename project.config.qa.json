@@ -1,0 +1,265 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.8.3",
+	"appid": "wxf1b88a3927e47dcd",
+	"projectname": "Teacher-Training-MiniProgram",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 26,
+			"list": [
+				{
+					"id": 0,
+					"name": "pages/my/myContact/myContact",
+					"pathName": "pages/my/myContact/myContact",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/activityDetail/activityDetail",
+					"pathName": "pages/index/activityDetail/activityDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/check/check",
+					"pathName": "pages/index/check/check",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login/fillInfo/fillInfo",
+					"pathName": "pages/login/fillInfo/fillInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/my",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/personalCenter/personalCenter",
+					"pathName": "pages/my/personalCenter/personalCenter",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/opinion/opinion",
+					"pathName": "pages/my/opinion/opinion",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/aboutUs/aboutUs",
+					"pathName": "pages/my/aboutUs/aboutUs",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/myContact/addContact/addContact",
+					"pathName": "pages/my/myContact/addContact/addContact",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/order/order",
+					"pathName": "pages/my/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/order/invoice/invoice",
+					"pathName": "pages/my/order/invoice/invoice",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/pay/pay",
+					"pathName": "pages/index/pay/pay",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/selectDate/selectDate",
+					"pathName": "pages/index/selectDate/selectDate",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/order/invoiceHistory/invoiceHistory",
+					"pathName": "pages/my/order/invoiceHistory/invoiceHistory",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/order/invoiceDetail/invoiceDetail",
+					"pathName": "pages/my/order/invoiceDetail/invoiceDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/personalCenter/nickname/nickname",
+					"pathName": "pages/my/personalCenter/nickname/nickname",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/order/collectInvoice/collectInvoice",
+					"pathName": "pages/my/order/collectInvoice/collectInvoice",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/order/shareOrder/shareOrder",
+					"pathName": "pages/my/order/shareOrder/shareOrder",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/offline/offline",
+					"pathName": "pages/offline/offline",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login/login",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login/inputCode/inputCode",
+					"pathName": "pages/login/inputCode/inputCode",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/calendar/calendar",
+					"pathName": "pages/calendar/calendar",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/chooseCity/chooseCity",
+					"pathName": "pages/index/chooseCity/chooseCity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/questionnaire/questionnaire",
+					"pathName": "pages/my/questionnaire/questionnaire",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/order/invoiceHistoryDetail/invoiceHistoryDetail",
+					"pathName": "pages/my/order/invoiceHistoryDetail/invoiceHistoryDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/order/shareOrder/shareOrder",
+					"pathName": "pages/my/order/shareOrder/shareOrder",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/hotelInfo/hotelInfo",
+					"pathName": "pages/index/hotelInfo/hotelInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/signIn/signIn",
+					"pathName": "pages/my/signIn/signIn",
+					"scene": null
+				}
+			]
+		}
+	}
+}

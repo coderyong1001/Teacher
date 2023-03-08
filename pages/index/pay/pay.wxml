@@ -1,0 +1,205 @@
+<wxs module="filter" src="../../../wxs/format_date.wxs"></wxs>
+<view class="pay-container">
+  <!-- 头部 -->
+  <view class="pay-header">
+    <view class="pay-title">支付详情</view>
+    <view class="activity-info">
+      <view class="left">
+        <view class="activity-name">{{course_info.name}}</view>
+        <view class="activity-time">
+          {{filter.getMonthDayHM(course_info.range_start, 'YYYY.MM.DD')}}—{{filter.getMonthDayHM(course_info.range_end, 'YYYY.MM.DD')}}
+        </view>
+      </view>
+      <view class="right">
+        <image src="{{course_info.logo || defaultImg}}" class="pay-logo" />
+      </view>
+    </view>
+  </view>
+
+  <!-- 内容部分 -->
+  <view class="pay-content">
+    <view class="pay-content-wrapper">
+      <!-- 报名人信息 -->
+      <view class="pay-card sign-up-poerson">
+        <view class="pay-card-top">
+          <view class="pay-subtitle">报名人员信息</view>
+          <block wx:for="{{personList}}" wx:key="index">
+            <view class="person-info onepx-border-bottom {{index === personList.length - 1 ? 'no-border-bottom' : ''}}">
+              <view class="pay-card-left">
+                <view>
+                  <image src="/assets/images/minus.png" class="minus-icon" bindtap="deletePerson" data-index="{{index}}"
+                    data-contactid="{{item.id}}">
+                  </image>
+                </view>
+                <view class="info-box">
+                  <view class="name">
+                    <text class="person-name">{{item.name}}</text>
+                    <text class="tel-phone">{{item.tel}}</text>
+                  </view>
+                  <view class="company">单位：{{item.company || ""}}</view>
+                  <!-- <view class="address">
+                    证书邮寄地址：{{item.province === item.city ? item.city : item.province + item.city}}{{item.district}}</view> -->
+                </view>
+              </view>
+              <view>
+                <image src="/assets/images/head-pic.png" class="head-pic"></image>
+              </view>
+            </view>
+          </block>
+          <view class="card-no-data" hidden="{{personList.length}}">暂未添加报名人员信息</view>
+        </view>
+        <view class="pay-card-bottom" bindtap="addPerson">
+          +添加/编辑报名人
+        </view>
+      </view>
+      <!-- 入住信息 -->
+      <block wx:if="{{hotelRadioList.length && hotelType === 3}}">
+        <view class="hotel-info-box" bindtap="fillHotelInfo">
+          <view class="subtitle">入住信息</view>
+          <view class="value-box">
+            <text class="value-text">{{isNeedRoomChoose ? (isNeedRoom ? '已填写' : '无需住宿') : '请选择'}}</text>
+            <image src="/assets/images/arrow.png" class="arrow" />
+          </view>
+        </view>
+      </block>
+
+      <!-- 发票信息 -->
+      <view class="hotel-info-box" bindtap="fillInvoiceInfo">
+        <view class="subtitle">发票信息</view>
+        <view class="value-box">
+          <text class="value-text">{{isNeedInvoiceChoose ? (isNeedInvoice ? '已填写' : '无需发票') : '请选择'}}</text>
+          <image src="/assets/images/arrow.png" class="arrow" />
+        </view>
+      </view>
+      <!-- 支付 -->
+      <view class="pay-card pd16 no-mb">
+        <view class="pay-card-top">
+          <view class="pay-subtitle">支付</view>
+          <view class="pay-thirdtitle">支付方式：</view>
+          <!-- <view class="offline-pay">线下汇款<icon type="success" class="pay-icon" color="#018389" size='{{18}}'></icon>
+          </view> -->
+          <!-- <view style="color: #333; font-size: 26rpx;">线下汇款</view> -->
+          <radio-group class="radio-group radio-group-pay" bindchange="payChange">
+            <block wx:if="{{price}}">
+              <label class="num-radio">
+                <text class="radio-value">微信支付</text>
+                <radio color="#018389" class="radio" value="wxpay" checked />
+              </label>
+            </block>
+            <label class="num-radio">
+              <text class="radio-value">线下汇款</text>
+              <radio color="#018389" class="radio" value="offline" />
+            </label>
+            <!-- <label class="num-radio">
+              <text class="radio-value">其他</text>
+              <radio color="#018389" class="radio" value="other" />
+            </label> -->
+          </radio-group>
+          <block wx:if="{{showUpFile}}">
+            <view class="pay-thirdtitle mt16">上传支付凭证：</view>
+
+            <view class="uploadfile">
+              <block wx:for="{{uploadfileUrl}}" wx:key="index">
+                <view class="uploadfile-item">
+                  <image src="{{item}}" class="add-file" />
+                  <image src="/assets/images/delete-item.png" class="delete-item" bindtap="deleteItem"
+                    data-index="{{index}}" />
+                </view>
+              </block>
+              <image src="/assets/images/uploadfile.png" class="add-file" bindtap="chooseFile" />
+            </view>
+          </block>
+          <block wx:if="{{showRemark}}">
+            <view class="pay-thirdtitle mt16">备注</view>
+            <view class="remark-content">
+              <textarea placeholder="请在这里输入备注信息" value="{{comment}}" bindinput="commentInput"
+                placeholder-style="color: #ccc; font-size: 26rpx;" class="remark-text"></textarea>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 按钮 -->
+  <block wx:if="{{!isShowAdd}}">
+    <view class="pay-btn-container">
+      <view>
+        <view>
+          <text class="pay-text">支付金额</text>
+          <text class="dollar">￥</text>
+          <text class="total-money">{{amount}}</text>
+        </view>
+        <view class="pay-detail" bindtap="showFeeDetail">
+          <view>支付明细</view>
+          <image src='/assets/images/pay-triangle.png' class="pay-triangle {{isShowFeeDetail ? 'active' : ''}}" />
+        </view>
+      </view>
+      <view class="pay-submit" bindtap="clickPay">提交订单</view>
+    </view>
+  </block>
+
+  <modal show="{{isShowFeeDetail}}" bind:closeModal="closeModal">
+    <view class="fee-detail {{showAnimation ? 'on' : ''}}">
+      <image class="fee-detail-icon" src="/assets/images/fee-detail-icon.png"></image>
+      <view class="fee-detail-container">
+        <view class="fee-detail-text onepx-border-bottom">费用明细</view>
+        <view class="activity-name-box">
+          <view class="act-name">{{course_info.name}}</view>
+          <view class="act-money">￥{{price}}*{{contactIdArr.length}}</view>
+        </view>
+      </view>
+    </view>
+  </modal>
+  <modal show="{{isShowAdd}}" catch:closeModal="closeModal">
+    <view class="add-person-container {{showAnimation ? 'on' : ''}}" catchtap="click">
+      <view class="add-btn-box onepx-border-bottom">
+        <view catchtap="cancel">取消</view>
+        <view class="confirm" bindtap="confirmAdd">确认</view>
+      </view>
+      <scroll-view class="contact-item-box" scroll-y="true" style="height: 672rpx;"
+        bindscrolltolower="bindscrolltolower">
+        <block wx:if="{{contactList.length}}">
+          <block wx:for="{{contactList}}" wx:key="index">
+            <view class="add-item-box onepx-border-bottom">
+              <view class="item-left-box">
+                <icon type="{{ checkstatus[item.id] ? 'success' : 'circle' }}" data-contactid="{{item.id}}"
+                  catchtap="checkboxChange" size="26" color="{{ checkstatus[item.id] ? '#018389' : '#999' }}"
+                  class="choose-person-box" />
+                <view class="person-info-box">
+                  <view class="add-name">
+                    <text class="name-text">{{item.name}}</text>
+                    <text>{{item.tel}}</text>
+                  </view>
+                  <view class="add-info-box major">职务：{{item.job_title || ""}}</view>
+                  <!-- <view class="add-info-box">
+                    地址：{{item.province === item.city ? item.city : item.province + item.city}}{{item.district}}</view> -->
+                </view>
+              </view>
+              <view class="item-right-box">
+                <image wx:if="{{!(selfApplyInfo.length > 0 && selfApplyInfo[0].id===item.id)}}" 
+                   src="/assets/images/edit.png" class="edit" catchtap="editPerson" data-id="{{item.id}}" />
+              </view>
+            </view>
+          </block>
+        </block>
+        <block wx:elif="{{!contactList.length}}">
+          <view class="no-data">
+            <image src="/assets/images/no-data.png" class="no-data-img" />
+            <view>哎呀，里面没有内容…</view>
+          </view>
+        </block>
+      </scroll-view>
+      <view class="add-btn">
+        <btn btnText="+添加报名人" noMt bindtap="handleClick" />
+      </view>
+    </view>
+  </modal>
+  <back-my pagePay />
+  <view class='QR_Code_group' wx:if="{{showQRCode}}">
+    <image class='imgCodeBtn' src='/assets/images/closeIcon.png' bindtap="closeImgClick"></image>
+    <text class='textCode'>请您长按二维码加群！</text>
+    <image 	show-menu-by-longpress='true' class='imgCode' src='{{RQCodeImg}}'></image>
+  </view>
+</view>

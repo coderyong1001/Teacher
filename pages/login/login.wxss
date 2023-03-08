@@ -1,0 +1,11 @@
+
+.telphone-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.telInput {
+  font-size: 36rpx;
+  color: rgba(153,153,153,1);
+  width: 100%;
+}

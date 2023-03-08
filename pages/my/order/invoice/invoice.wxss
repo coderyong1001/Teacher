@@ -1,0 +1,74 @@
+.invoice-container {
+  position: relative;
+  height: 100%;
+  padding-top: 108rpx;
+  padding-bottom: 186rpx;
+}
+.invoice-container .tab-control-box {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1;
+}
+.invoice-container .select-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+}
+.invoice-container .select-container .select-btn-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 48rpx 48rpx 40rpx 48rpx;
+  box-shadow: 0rpx -2rpx 2px 0rpx rgba(0, 0, 0, 0.07);
+}
+.invoice-container .select-container .select-btn-box .left-box {
+  height: 98rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.invoice-container .select-container .select-btn-box .left-box .num-money {
+  font-size: 30rpx;
+  color: #333;
+  line-height: 44rpx;
+}
+.invoice-container .select-container .select-btn-box .left-box .num-money .order-num {
+  color: #F24724;
+}
+.invoice-container .select-container .select-btn-box .left-box .num-money .order-money {
+  color: #F24724;
+}
+.invoice-container .select-container .select-btn-box .left-box .num-money .order-money .total-money {
+  font-size: 44rpx;
+}
+.invoice-container .select-container .select-btn-box .left-box .curpage-all {
+  display: flex;
+  align-items: center;
+}
+.invoice-container .select-container .select-btn-box .left-box .curpage-all .all-select {
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  color: #333;
+  margin-right: 24rpx;
+}
+.invoice-container .select-container .select-btn-box .left-box .curpage-all .all-select .select-icon {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 8rpx;
+}
+.invoice-container .select-container .select-btn-box .right-box {
+  width: 192rpx;
+  height: 98rpx;
+  background: #018389;
+  border-radius: 4rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #fff;
+}

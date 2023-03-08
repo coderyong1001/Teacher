@@ -1,0 +1,23 @@
+<wxs module="filter" src="../../wxs/format_date.wxs"></wxs>
+<block wx:for="{{activityList}}" wx:key="index">
+  <view class="activity-container" bindtap="clickDetail" data-id="{{item.id}}">
+    <view class="left-box">
+      <view class="activity-type">{{activityType[item.category]}}</view>
+      <image class="activity-cover" src="{{item.logo || defaultImg}}"></image>
+      <view class="apply-status {{applyStatusColor[item.time_status]}}">{{applyStatus[item.time_status]}}</view>
+    </view>
+    <view class="right-box">
+      <view class="activity-title">{{item.name}}</view>
+      <view class="activity-time">{{filter.getMonthDayHM(item.range_start, 'YYYY.MM.DD')}}—{{filter.getMonthDayHM(item.range_end, 'YYYY.MM.DD')}}</view>
+      <view class="remain-place">报名名额：{{item.members}}名</view>
+      <view class="money">¥{{item.price}}</view>
+      <view class="activity-pos" wx:if="{{item.place}}">
+        <view class="activity-pos-box">
+          <image src="/assets/images/activity-pos.png" class="activity-pos-icon"></image>
+          {{item.place}}
+        </view>
+
+      </view>
+    </view>
+  </view>
+</block>

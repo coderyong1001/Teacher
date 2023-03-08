@@ -1,0 +1,11 @@
+<view class="singin-item">
+    <view class="item-left">
+        <view class="activity-name">{{actName}}</view>
+        <view class="{{train?'activity-time-train':'activity-time'}}">{{actTime}}</view>
+        <!-- <view class="activity-description">{{actAddress}}</view> -->
+    </view>
+    <view class="item-right">
+        <text wx:if="{{train}}" class="status">{{actStatus}}</text>
+        <image src="/assets/images/arrow.png"></image>
+    </view>
+</view>

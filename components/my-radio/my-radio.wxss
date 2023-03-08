@@ -1,0 +1,15 @@
+.radio{
+  display: inline-block;
+}
+.not-checked{
+  border: 1px solid #999999;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: inline-block;
+}
+.checked{
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden;
+}

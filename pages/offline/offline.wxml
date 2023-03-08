@@ -1,0 +1,7 @@
+<view class="offline-container">
+  <view class="offline-box">
+    <image src="/assets/images/offline.png" class="offline" />
+  </view>
+  <view class="offline-info">哎呀，网络出问题了...</view>
+  <view class="refresh" bindtap="refreshPage">刷新重试</view>
+</view>

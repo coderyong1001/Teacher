@@ -1,0 +1,62 @@
+.order-info-container {
+  padding: 48rpx 48rpx 0 48rpx;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #fff;
+}
+.order-info-container .order-info-box {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 48rpx;
+}
+.order-info-container .order-info-box .info-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 28rpx;
+  width: 100%;
+}
+.order-info-container .order-info-box .info-left .order-num {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #000;
+  max-width: 572rpx;
+}
+.order-info-container .order-info-box .info-left .activity-name,
+.order-info-container .order-info-box .info-left .activity-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.order-info-container .order-info-box .info-left .activity-name {
+  color: #333;
+}
+.order-info-container .order-info-box .info-left .activity-name .pay-status {
+  font-size: 28rpx;
+  color: #13AB49;
+}
+.order-info-container .order-info-box .info-left .activity-name .course_name {
+  max-width: 470rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.order-info-container .order-info-box .info-left .activity-time {
+  color: #999;
+}
+.order-info-container .order-info-box .info-left .activity-time .pay-money {
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #F24724;
+  line-height: 50rpx;
+}
+.order-info-container .select-box {
+  position: absolute;
+  top: 24rpx;
+  right: 24rpx;
+}
+.order-info-container .select-box .selected {
+  width: 44rpx;
+  height: 44rpx;
+}

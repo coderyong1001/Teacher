@@ -1,0 +1,97 @@
+<view class="hotelInfo-wrapper {{!isNeedRoom ? 'no-pb percent100' : ''}}">
+  <view class="title">住宿信息</view>
+  <view class="title-title">
+    <view class="needhotel">是否需要住宿</view>
+    <view class="choose-box">
+      <view class="choose-item" bindtap="chooseYes">是<icon type="{{ isNeedRoomChoose ? (isNeedRoom ? 'success' : 'circle') : 'circle' }}" size="20" color="#018389" class="choose-icon"></icon>
+      </view>
+      <view class="choose-item" bindtap="chooseNo">否<icon type="{{ isNeedRoomChoose ? (!isNeedRoom ? 'success' : 'circle') : 'circle' }}" size="20" color="#018389" class="choose-icon"></icon>
+      </view>
+    </view>
+    <view class="comments">
+      <view class="comments-title">备注</view>
+      <view class="comments-content">{{hotelHint ? hotelHint : '无'}}</view>
+    </view>
+  </view>
+
+  <view class="pay-card" hidden="{{!isNeedRoom}}">
+    <view class="pay-card-top">
+      <view class="pay-subtitle">入住信息填写</view>
+      <block wx:for="{{selectInfos}}" wx:for-item="selectItem" wx:key="index">
+        <view class="person-info {{index === hotelList.length - 1 ? '' : 'onepx-border-bottom'}}">
+          <view class="pay-card-left">
+            <image src="/assets/images/minus.png" class="minus-icon" bindtap="deleteHotel" data-index="{{index}}">
+            </image>
+          </view>
+          <view class="hotel-info">
+            <view class="pay-thirdtitle">酒店名字：</view>
+            <radio-group class="hotel-radio-group" bindchange="chooseHotel" data-index="{{index}}">
+              <label wx:for="{{accommodations}}" wx:for-item="hotel" wx:for-index="idx" wx:key="idx" class="hotel-radio">
+                <view class="hotel-radio-box">
+                  <text class="radio-value">{{hotel.name}}</text>
+                  <radio color="#018389" class="radio" value="{{hotel.id}}" checked="{{selectItem.hotel_id === hotel.id}}" />
+                </view>
+              </label>
+            </radio-group>
+            <picker class="check-picker" mode="date" value="{{selectItem.checkin}}" data-index="{{index}}" bindchange="changeCheckIn">
+              <!-- <picker class="check-picker" mode="date" start="{{pickerStart}}" end="{{selectItem.checkout}}" value="{{selectItem.checkin}}" data-index="{{index}}" bindchange="changeCheckIn"> -->
+            <view class="check-in-time">
+              <view class="check-time">入店时间： {{selectItem.checkin}}</view>
+              <image class="arrow-right" src="/assets/images/arrow.png"></image>
+            </view>
+            </picker>
+            <picker class="check-picker" mode="date" value="{{selectItem.checkout}}" data-index="{{index}}" bindchange="changeCheckOut">
+              <!-- <picker class="check-picker" mode="date" start="{{selectItem.checkin}}" end="{{pickerEnd}}" value="{{selectItem.checkout}}" data-index="{{index}}" bindchange="changeCheckOut"> -->
+            <view class="check-out-time">
+              <view class="check-time">离店时间： {{selectItem.checkout}}</view>
+              <image class="arrow-right" src="/assets/images/arrow.png"></image>
+            </view>
+            </picker>
+            <view class="pay-thirdtitle mt16">住宿类别：</view>
+            <view class="choose-room">
+              <block wx:for="{{roomConfigObj[selectItem.hotel_id].room_info}}" wx:for-item="roomitem" wx:for-index="roomindex" wx:key="roomindex">
+                <view class="room-box {{selectItem.config === roomitem.config ? 'selected' : ''}}"
+                  data-config="{{roomitem.config}}" bindtap="clickRoom" data-index="{{index}}">
+                  <view>
+                    <image src="/assets/images/{{imageName[roomitem.config]}}.png" class="room-icon {{imageClass[roomitem.config]}}"
+                      hidden="{{selectItem.config === roomitem.config}}"></image>
+                    <image src="/assets/images/{{imageName[roomitem.config]}}-selected.png"
+                      class="room-icon {{imageClass[roomitem.config]}}" hidden="{{selectItem.config !== roomitem.config}}">
+                    </image>
+                  </view>
+                  {{roomTypeObj[roomitem.config]}}/{{roomitem.price}}元
+                </view>
+              </block>
+            </view>
+            <view class="pay-thirdtitle">数量：</view>
+            <radio-group class="radio-group" bindchange="chooseNum" data-index="{{index}}">
+              <label wx:for="{{numRadioList}}" wx:for-item="numberRadio" wx:for-index="numindex" wx:key="numindex" class="num-radio">
+                <view class="radio-box">
+                  <text class="radio-value">{{numberRadio.index < 4 ? numberRadio.num : '其他'}}</text>
+                  <input placeholder="数量" placeholder-style="text-align: center;"
+                    class="num-input" wx:if="{{numberRadio.index === 4}}" type="number"
+                    value="{{selectItem.num > 3 ? selectItem.inputNum : ''}}" data-index="{{index}}" bindinput="numInpuChange"
+                    ></input>
+                  <radio color="#018389" class="radio" value="{{numberRadio.num}}"
+                    checked="{{selectItem.num === numberRadio.num}}" />
+                </view>
+              </label>
+            </radio-group>
+          </view>
+        </view>
+      </block>
+
+      <view class="card-no-data" hidden="{{selectInfos.length}}">暂未填写入住信息</view>
+    </view>
+    <view class="pay-card-bottom" bindtap="addHotel">
+      +添加入住信息
+    </view>
+  </view>
+  <view class="bottom-comments-box" hidden="{{!isNeedRoom}}">
+    <view class="bottom-comments-title">备注信息</view>
+    <textarea class="bottom-comments-textarea" placeholder="请填写备注信息..." value="{{hotelComment}}" bindinput="inputComment"></textarea>
+  </view>
+  <view class="btn-box">
+    <btn btnText="确定" bindtap="handleClick" />
+  </view>
+</view>

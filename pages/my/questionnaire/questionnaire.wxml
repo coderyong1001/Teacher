@@ -1,0 +1,39 @@
+<!--pages/my/questionnaire/questionnaire.wxml-->
+<view class="blue-backgroud"></view>
+<view class="question-list">
+    <view class="question-list-item">
+        <view class="card">
+            <view class="question-name">问题1</view>
+            <view class="question-description">请选择所需要评价的活动内容</view>
+            <view class="answer-choice">
+                <my-radio-group radio-group-class="choice-four" data-id="actId" bind:change="changeRadio">
+                    <view class="radios" wx:for="{{course}}" wx:key="index"><text>{{item.name}}</text><my-radio radio-class="radio-value" value="{{item.id}}" size="36rpx" color="#018389"></my-radio></view>
+                    <!-- <view class="radios"><text>选择评价的活动内容二</text><my-radio radio-class="radio-value" value="2" size="36rpx" color="#018389"></my-radio></view>
+                    <view class="radios"><text>选择评价的活动内容三</text><my-radio radio-class="radio-value" value="3" size="36rpx" color="#018389"></my-radio></view>
+                    <view class="radios"><text>选择评价的活动内容四</text><my-radio radio-class="radio-value" value="4" size="36rpx" color="#018389"></my-radio></view> -->
+                </my-radio-group>
+            </view>
+        </view>
+    </view>
+    <view class="question-list-item" wx:for="{{questions}}" wx:key="index" wx:for-index="questionId">
+        <view class="card">
+            <view class="question-name">问题{{questionId+2}}</view>
+            <view class="question-description">{{item}}</view>
+            <view class="answer-choice score-box">
+              <view wx:for="{{10}}" wx:key="item" class="score-item {{item == 9 ? 'score-item-br' : ''}} {{scoreObj[questionId + 2] == item + 1 ? 'active' : ''}}" bindtap="chooseScore" data-id="{{questionId+2}}" data-score="{{item + 1}}">{{item + 1}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="question-list-item"wx:for="{{textQiestions}}" wx:key="index">
+        <view class="card">
+            <view class="question-name">问题{{index+11}}</view>
+            <view class="question-description">{{item}}</view>
+            <view class="answer-choice">
+                <textarea class="answer-text" placeholder="在这里输入文字" value="{{textAnswer[index]}}" 
+                data-index="{{index}}" bind:input="inputText" placeholder-class="text-placeholder"></textarea>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="btn"><btn btn-text="提交" bind:tap="submit"></btn></view>
+

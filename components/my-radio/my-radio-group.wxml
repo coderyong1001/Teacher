@@ -1,0 +1,3 @@
+<view class="radio-group-class" name="radio-group" bind:tap="tapThis">
+  <slot></slot>
+</view>

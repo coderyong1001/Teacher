@@ -1,0 +1,8 @@
+<view class="del-box" bind:touchmove="moveLeft" bind:touchstart="start">
+	<view class="del-left {{animation === 0 ? 'margin-left2' : 'margin-left'}}" id="left"><slot></slot></view>
+	<view class="hidden {{animation === 0 ? 'animation2' : 'animation'}}"></view>
+	<view class="del-right {{animation === 0 ? 'animation2' : 'animation'}}" id="right" bind:tap="del">
+		<image src='/assets/images/del.png'></image>
+		<text>删除</text>
+	</view>
+</view>

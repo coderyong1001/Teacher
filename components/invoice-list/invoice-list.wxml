@@ -1,0 +1,20 @@
+<view class="order-list-container">
+  <block wx:for="{{invoiceDataList}}" wx:key="index">
+    <view class="order-info-container onepx-border-top" bindtap="singleChoose" data-index="{{index}}" data-id="{{item.id}}" data-money="{{item.real_amount}}">
+      <view class="order-info-box">
+        <view class="info-left">
+          <view class="order-num">订单号：{{item.order_number}}</view>
+          <view class="activity-name">
+            <view class="course_name">{{item.course_name}}</view>
+            <view class="pay-status">{{orderStatusObj[item.payment_status]}}</view>
+          </view>
+          <view class="activity-time">{{item.create_time}}<view class="pay-money">¥{{item.real_amount}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="select-box">
+        <icon type="{{ selectedList[index] ? 'success' : 'circle' }}" size="22" color="{{ selectedList[index] ? '#018389' : '#999' }}" class="select-icon" />
+      </view>
+    </view>
+  </block>
+</view>

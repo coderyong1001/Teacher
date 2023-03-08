@@ -1,0 +1,32 @@
+.history-container {
+  min-height: 100vh;
+}
+.history-container .invoice-history-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 224rpx;
+  box-sizing: border-box;
+  padding: 48rpx 48rpx 26rpx 48rpx;
+}
+.history-container .invoice-history-item .invoice-time {
+  font-size: 32rpx;
+  color: #000;
+}
+.history-container .invoice-history-item .invoice-type-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.history-container .invoice-history-item .invoice-type-status .invoice-type {
+  font-size: 28rpx;
+  color: #333333;
+}
+.history-container .invoice-history-item .invoice-type-status .invoice-status .arrow {
+  margin-left: 16rpx;
+}
+.history-container .invoice-history-item .invoice-money {
+  font-size: 36rpxpx;
+  font-weight: 500;
+  color: #f24724;
+}

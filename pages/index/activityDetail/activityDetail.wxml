@@ -1,0 +1,165 @@
+<wxs module="filter" src="../../../wxs/format_date.wxs"></wxs>
+<view class="activity-contariner">
+  <!-- 头部 -->
+  <view class="header-contariner">
+    <image src="/assets/images/detail-bg.png" class="detail-bg"> </image>
+    <view class="banner">
+      <image src="{{courseDetailDataObj.logo || defaultImg}}" class="activity-banner"> </image>
+      <view class="activity-theme">
+        {{activityType[courseDetailDataObj.category]}}
+      </view>
+    </view>
+  </view>
+  <!-- 活动信息 -->
+  <view class="activity-info">
+    <view class="activity-title">{{courseDetailDataObj.name}}
+    </view>
+    <view class="money-box onepx-border-bottom">
+      <view class="money">¥{{courseDetailDataObj.price}}</view>
+      <view class="apply-status {{applyStatusColor[time_status]}}">{{applyStatus[courseDetailDataObj.time_status]}}
+      </view>
+    </view>
+    <view class="common-info-box onepx-border-bottom">
+      <view class="total-num">报名名额：{{courseDetailDataObj.members}}名</view>
+    </view>
+    <view class="common-info-box onepx-border-bottom">
+      截止报名：{{filter.getMonthDayHM(courseDetailDataObj.apply_end_time, 'YYYY.MM.DD hh:mm:ss')}}</view>
+
+    <view class="common-info-box onepx-border-bottom">
+      活动时间：{{filter.getMonthDayHM(courseDetailDataObj.range_start, 'YYYY.MM.DD')}}—{{filter.getMonthDayHM(courseDetailDataObj.range_end, 'YYYY.MM.DD')}}
+    </view>
+    <view class="common-info-box pos-box" bindtap="clicknavigation" wx:if="{{place.detail_address}}">
+      <view class="pos-text">
+        <image src="/assets/images/mini-pos-icon.png" class="mini-pos"></image>
+        <view class="pos-text-box">
+          {{place.detail_address ? place.detail_address : '地点未确认'}}
+        </view>
+      </view>
+      <image src="/assets/images/arrow.png" class="arrow"></image>
+    </view>
+  </view>
+  <!-- 间隔 -->
+  <view class="space"></view>
+
+  <!-- 活动内容 -->
+  <view class="content-contariner">
+    <view class="activity-subtitle">活动介绍</view>
+    <view class="content">
+      <rich-text nodes="{{desc}}"></rich-text>
+    </view>
+    <view wx:if="{{schedule_pic}}" class="activity-subtitle">详情图片</view>
+    <view wx:if="{{schedule_pic}}" class="content">
+      <image src="{{schedule_pic}}"
+      mode="widthFix" class="schedule_pic"></image>
+    </view>
+
+    <view wx:if="{{schedule && schedule.length != 0}}" class="activity-subtitle">日程安排</view>
+    <scroll-view wx:if="{{schedule && schedule.length != 0}}" class="time-arrangement" scroll-x>
+      <block wx:for="{{schedule}}" wx:for-item="scheduleItem" wx:key='index'>
+        <view class="time-item {{currentDayIndex === index ? 'active' : ''}}" bindtap="changeDayTime"
+          data-index="{{index}}" data-time="{{scheduleItem.course_date}}">
+          {{filter.getMonthDayHM(scheduleItem.course_date, 'MM月DD日')}}</view>
+      </block>
+    </scroll-view>
+    <block wx:if="{{schedule && schedule.length != 0}}" wx:for="{{dayTimesObj[dayTime] || dayTimesObj[schedule[0].course_date]}}" wx:key='index'>
+      <view class="time-arrangement-title">
+        {{filter.getMonthDayHM(item.start_time, 'MM.DD')}}({{item.weekday}})
+        {{filter.getMonthDayHM(item.start_time, 'hh:mm')}}-{{filter.getMonthDayHM(item.end_time, 'hh:mm')}}
+      </view>
+      <view class="content">
+        <view wx:for="{{item.content}}" wx:for-item="dayC" wx:key='index'>{{dayC}}</view>
+      </view>
+      <block wx:if="{{item.location.length}}">
+        <view class="class-location"
+          wx:for-index="locationIndex">
+          上课地点：<text wx:for="{{item.location}}" wx:for-item="locationItem" wx:for-index="locationIndex"
+            wx:key="locationIndex">{{locationItem}}<text
+              wx:if="{{locationIndex != item.location.length - 1}}">、</text></text>
+        </view>
+      </block>
+
+    </block>
+
+
+    <block wx:if="{{place.detail_address}}">
+      <view class="activity-subtitle">会场导航</view>
+      <map id="map" longitude="{{place.longitude}}" latitude="{{place.latitude}}" scale="14" markers="{{markers}}"
+        show-location style="width: 100%; height: 266rpx;" bindtap="clicknavigation"></map>
+    </block>
+
+    <block wx:if="{{hotel_type !== 1}}">
+      <view class="activity-subtitle">酒店信息</view>
+      <view class="recommend">{{hotel_type === 2 ? '推荐酒店': '预定酒店'}}：</view>
+      <view class="recommend-warning">
+        {{
+          hotel_type === 2
+          ? '本次研修不统一安排住宿，您可以打电话预定我们推荐的酒店，也可预定其他酒店。'
+          : '本次研修提供酒店预定服务，您可以在报名时选择相应的酒店，也可自行预定其他酒店。'
+        }}
+      </view>
+      <block wx:for="{{recommend_hotels}}" wx:key="index">
+        <view class="hotel-box">{{item.name}}</view>
+        <image src="{{item.picture}}" class="hotel-image" />
+        <view class="hotel-box" wx:if="{{item.detail_address}}">地址：{{item.detail_address ? item.detail_address : ''}}</view>
+        <view class="hotel-box" wx:if="{{item.tel}}">电话：{{item.tel ? item.tel : ''}}</view>
+        <view class="hotel-price" wx:if="{{hotel_type === 3}}">价格：
+          <block wx:for="{{item.room_info}}" wx:key="index" wx:for-item="each">
+            <text>{{roomTypeObj[each.config]}}(¥{{each.price}}){{index < item.room_info.length - 1 ? '、' : ''}}</text>
+          </block>
+        </view>
+      </block>
+    </block>
+
+
+    <block wx:if="{{courseDetailDataObj.attention}}">
+      <view class="activity-subtitle">注意事项</view>
+      <view class="content">
+        {{courseDetailDataObj.attention}}
+      </view>
+    </block>
+
+    <!-- <block wx:if="{{courseDetailDataObj.template}}">
+      <view class="activity-subtitle">证书模板</view>
+      <image src="{{courseDetailDataObj.template}}" class="certificate" bindtap="clickPreview" />
+    </block> -->
+    <block wx:if="{{courseDetailDataObj.reference.length}}">
+      <view class="activity-subtitle">资料下载</view>
+      <block wx:for="{{courseDetailDataObj.reference}}" wx:key="index">
+        <block wx:if="{{item.file_name}}">
+          <view class="common-info-box pos-box onepx-border-bottom" bindtap="downloadFile"
+            data-downloadurl="{{item.file_url}}">
+            <view class="pos-text">
+              {{item.file_name}}
+            </view>
+            <image src="/assets/images/arrow.png" class="arrow"></image>
+          </view>
+        </block>
+      </block>
+    </block>
+  </view>
+
+  <!-- 底部按钮 -->
+  <view class="btn-box">
+    <view class="business-contact" bindtap="clickShowModal">会务联系</view>
+    <button class="sign-up" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">立即报名</button>
+  </view>
+  <modal show="{{isShowModal}}" bind:closeModal="closeModal">
+    <view class="contact-box">
+      <view class="contact-person-box">
+        <block wx:for="{{conference}}" wx:for-item="conferenceItem" wx:key="index">
+          <view class="contact-type {{index === 0 ? 'no-mt' : ''}}">{{conferenceItem.department}}</view>
+          <view class="contact-content">
+            <block wx:for="{{conferenceItem.contacts}}" wx:key="index">
+              <view class="contact-person" bindtap="makePhoneCall" data-tel="{{item.tel}}">{{item.name}}:{{item.tel}}
+              </view>
+              <view class="contact-person" bindtap="makePhoneCall1" data-short_tel="{{item.short_tel}}" style="margin-bottom: 10rpx">座机电话:{{item.short_tel}}
+              </view>
+            </block>
+          </view>
+        </block>
+      </view>
+      <view class="contact-btn" bindtap="closeModal">知道了</view>
+    </view>
+  </modal>
+  <back-my />
+</view>

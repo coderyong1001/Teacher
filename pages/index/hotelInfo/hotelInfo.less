@@ -1,0 +1,202 @@
+.hotelInfo-wrapper {
+  padding: 0 48rpx;
+  background-color: #f5f5f5;
+  // height: 100vh;
+  // box-sizing: border-box;\
+  padding-bottom: 230rpx;
+  
+  .title {
+    font-size: 60rpx;
+    color:rgba(51,51,51,1);
+    line-height: 80rpx;
+    padding-top: 40rpx;
+  }
+  .choose-box {
+    display: flex;
+    align-items: center;
+    .choose-item {
+      font-size: 36rpx;
+      color: #333;
+      display: flex;
+      align-items: center;
+      margin-right: 106rpx;
+      .choose-icon {
+        margin-left: 12rpx;
+      }
+    }
+  }
+  .minus-icon {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 20rpx;
+  }
+  // 公用部分
+  .radio-value {
+    margin-right: 12rpx;
+    font-size: 26rpx;
+    color: #333;
+  }
+
+  .radio {
+    transform: scale(0.8)
+  }
+
+  // 标题公用部分
+  .pay-thirdtitle {
+    font-size: 26rpx;
+    line-height: 36rpx;
+    color: #333;
+    margin-bottom: 20rpx;
+    display: flex;
+    align-items: center;
+
+    &.mt16 {
+      margin-top: 32rpx;
+    }
+  }
+  .pay-card {
+    width: 654rpx;
+    background: #fff;
+    border-radius: 8rpx;
+    color: #333;
+    margin-bottom: 40rpx;
+    margin-top: 50rpx;
+
+    .pay-card-top {
+      padding: 48rpx 48rpx 0 48rpx;
+
+      .pay-subtitle {
+        font-size: 30rpx;
+        font-weight: 600;
+        line-height: 42rpx;
+        margin-bottom: 32rpx;
+      }
+
+      .person-info {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 26rpx;
+        margin-top: 32rpx;
+
+        .hotel-info {
+          width: 556rpx;
+        }
+
+        .pay-card-left {
+          display: flex;
+        }
+
+        .choose-room {
+          display: flex;
+          margin-bottom: 32rpx;
+
+          .room-box {
+            width: 154rpx;
+            height: 58rpx;
+            border-radius: 2rpx;
+            border: 1rpx solid #EDEDED;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 26rpx;
+            color: #333;
+            margin-right: 22rpx;
+
+            &.selected {
+              border-color: #018389;
+              color: #018389;
+            }
+
+            .room-icon {
+              height: 40rpx;
+              margin-right: 8rpx;
+
+              &.single {
+                width: 16rpx;
+              }
+
+              &.double {
+                width: 32rpx;
+              }
+
+              &.triple {
+                width: 50rpx;
+              }
+            }
+          }
+        }
+
+        .radio-group {
+          display: flex;
+          justify-content: space-between;
+          &.radio-group-pay {
+            margin-bottom: 32rpx;
+          }
+
+          .num-radio {
+            .radio-box {
+              display: flex;
+              align-items: center;
+
+              .num-input {
+                font-size: 20rpx;
+                width: 102rpx;
+                height: 56rpx;
+                margin-right: 8rpx;
+                border-radius: 2rpx;
+                opacity: 0.35;
+                border: 1rpx solid rgba(151, 151, 151, 1);
+                box-sizing: border-box;
+                text-align: center;
+                color: #000;
+              }
+            }
+          }
+        }
+
+        // 酒店选择
+        .hotel-radio-group {
+          .hotel-radio {
+            .hotel-radio-box {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: 20rpx;
+
+            }
+          }
+
+        }
+      }
+    }
+
+    .pay-card-bottom {
+      border-top: 1rpx solid #f5f5f5;
+      display: flex;
+      justify-content: flex-end;
+      padding: 30rpx 48rpx 30rpx 0;
+
+      font-size: 30rpx;
+      font-weight: 500;
+      color: rgba(1, 131, 137, 1);
+    }
+
+    // 暂无信息
+    .card-no-data {
+      font-size: 26rpx;
+      color: #999;
+      line-height: 36rpx;
+      margin-bottom: 32rpx;
+    }
+  }
+  .btn-box {
+    height: 224rpx;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 48rpx 0rpx 48rpx;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #F5F5F5;
+  }
+}

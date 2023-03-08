@@ -1,0 +1,67 @@
+<wxs module="filter" src="../../wxs/format_date.wxs"></wxs>
+<view class="order-list-container">
+  <block wx:for="{{orderList}}" wx:key="index">
+    <view class="order-space" wx:if="{{item.order_status !== 9}}"></view>
+    <view class="order-info-container" wx:if="{{item.order_status !== 9}}">
+      <view class="order-info-box" bindtap="showDetail" data-id="{{item.id}}">
+        <view class="order-item-box">
+          <view class="order-num">订单号：{{item.order_number}}</view>
+          <view class="pay-status {{item.order_status === 0 ? 'success' : ''}}">{{orderStatusObj[item.order_status]}}
+          </view>
+        </view>
+        <view class="order-item-box">
+          <view class="activity-name">{{item.course_name}}</view>
+          <view class="activity-type">{{categoryObj[item.category]}}</view>
+        </view>
+        <view class="order-item-box">
+          <view class="activity-time">{{item.create_time}}</view>
+          <view class="pay-money">¥{{item.real_amount}}</view>
+        </view>
+      </view>
+      <block
+        wx:if="{{item.canrefund || (item.order_status === 5) || (item.order_status === 1) || (item.order_status === 2) || (item.order_status === 4)}}">
+        <view class="list-btn">
+          <block wx:if="{{item.order_status === 1 && filter.getRemainTime(item.pay_end_time, 'mm:ss')}}">
+            <view class="list-common-btn" bindtap="goPay" data-orderid="{{item.id}}">去支付(剩余{{filter.getRemainTime(item.pay_end_time, 'hh:mm')}})</view>
+          </block>
+          <block wx:if="{{item.order_status === 2 && item.payment_method === 1}}">
+            <view class="list-common-btn" bindtap="chooseFile" data-orderid="{{item.id}}">+{{item.voucher.length === 0 ? '上传' : '更新'}}支付凭证</view>
+          </block>
+          <block wx:if="{{item.order_status === 1 || item.order_status === 2}}">
+            <view class="list-common-btn cancel-btn" bindtap="clickCancelOrder" data-orderid="{{item.id}}">取消订单</view>
+          </block>
+          <block wx:if="{{item.order_status === 4}}">
+            <view class="list-common-btn cancel-btn" bindtap="delOrder" data-orderid="{{item.id}}">删除订单</view>
+          </block>
+          <block wx:if="{{item.canrefund}}">
+            <view class="list-common-btn cancel-btn" bindtap="applyRefund" data-orderid="{{item.id}}" data-price="{{item.price}}" data-applicants="{{item.applicants}}">申请退款</view>
+          </block>
+          <block wx:if="{{item.order_status === 5}}">
+            <view class="list-common-btn cancel-btn" bindtap="cancelRefund" data-orderid="{{item.id}}">取消退款</view>
+          </block>
+        </view>
+      </block>
+    </view>
+  </block>
+  <view class="black-back" wx:if="{{refund}}" bindtap="closeRefund" id="box">
+    <view class="applicants-list">
+      <view class="applicants-box-title">申请退款</view>
+      <view class="applicants-box-comment">请选择您要退款的报名人：</view>
+      <scroll-view class="block-box" scroll-y>
+      <block wx:for="{{applicants}}" wx:key="index">
+        <view class="applicants-item" data-index="{{index}}" bindtap="chooseApplicant">
+          <view wx:if="{{!item.checked}}" class="applicants-item-checkbox"></view>
+          <image wx:if="{{item.checked}}" src="/assets/images/selected.png" class="applicants-item-checked"/>
+          <view class="applicants-item-name">{{item.name}}{{refundStatus[item.refund_status]}}</view>
+        </view>
+      </block>
+      </scroll-view>
+      <view class="applicants-refund-money">退款金额：<text class="orange">{{refundPrice}}*{{refundNumber}} ({{refundCount || 0.00}})</text>元</view>
+      <view class="applicants-opration">
+        <view class="applicants-cancel" id="cancel">取消</view>
+        <view class="applicants-confirm" id="confirm">确定</view>
+      </view>
+      <image class="applicants-close" src="/assets/images/closeIcon.png" id="close" />
+    </view>
+  </view>
+</view>

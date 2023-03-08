@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "填写信息",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "btn": "/components/btn/btn",
+    "form-input": "/components/form-input/form-input"
+  }
+}

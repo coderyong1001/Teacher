@@ -1,0 +1,110 @@
+/* pages/my/questionnaire/questionnaire.wxss */
+page{
+    background:rgba(245,245,245,1);
+}
+.blue-backgroud{
+    background-color: #018389;
+    height: 164rpx;
+}
+.question-list{
+    padding: 0 48rpx;
+    margin-top: -138rpx;
+}
+.question-list-item{
+    margin-top: 40rpx;
+}
+.btn{
+    padding: 0 48rpx;
+    padding-bottom: 100rpx;
+}
+
+/*********************/
+.card{
+    background:rgba(255,255,255,1);
+    border-radius: 8rpx;
+    padding: 48rpx;
+}
+
+.question-name{
+    font-size:30rpx;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+    line-height:42rpx;
+}
+.question-description{
+    margin-top: 20rpx;
+    font-size:26rpx;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+    line-height:36rpx;
+}
+
+
+/*******************问题选项列表布局********************************/
+.choice-five{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.radios-five{
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: top;
+    margin-top: 60rpx;
+    font-size:26rpx;
+    color:rgba(51,51,51,1);
+    line-height:36rpx;
+}
+.choice-four{
+    
+}
+.radios{
+    margin-top: 60rpx;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    font-size:26rpx;
+    color:rgba(51,51,51,1);
+    line-height:36rpx;
+}
+.radio-value{
+    margin-left: 12rpx;
+}
+.answer-text{
+    background:rgba(248,248,248,1);
+    border-radius:4rpx;
+    margin-top: 60rpx;
+    padding: 24rpx;
+    font-size:26rpx;
+    line-height:36rpx;
+    box-sizing: border-box;
+    width: 558rpx;
+}
+.text-placeholder{
+    color:rgba(192,192,192,1);
+}
+.score-box {
+  display: flex;
+  margin-top: 40rpx;
+}
+.score-item {
+  box-sizing: border-box;
+  border: 2rpx solid rgba(239,239,239,1);
+  border-right: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 58rpx;
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+}
+.score-item-br {
+  border-right: 2rpx solid rgba(239,239,239,1);
+}
+.score-item.active {
+  border: 2rpx solid #018389;
+}

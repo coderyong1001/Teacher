@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "调查问卷",
+  "usingComponents": {
+    "btn":"/components/btn/btn",
+    "my-radio":"/components/my-radio/my-radio",
+    "my-radio-group":"/components/my-radio/my-radio-group"
+  },
+  "enablePullDownRefresh": false
+}

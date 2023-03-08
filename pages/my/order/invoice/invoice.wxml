@@ -1,0 +1,29 @@
+<view class="invoice-container {{showNoData ? 'gray no-pt no-pb percent100' : 'white'}}">
+  <view class="tab-control-box">
+    <tab-control bind:confirmChoice="confirmChoice" tabList="{{tabList}}" id="tabControl" />
+  </view>
+  <paging showNoData="{{showNoData}}">
+    <invoice-list invoiceDataList="{{invoiceDataList}}" bind:setOrderData="setOrderData" id="invoice-list" />
+  </paging>
+  <view class="select-container">
+    <view class="select-btn-box">
+      <view class="left-box">
+        <view class="num-money">
+          <text class="order-num">{{selectedNum}}</text>个订单，共<text class="order-money">￥<text class="total-money">{{totalMoney}}</text></text>
+        </view>
+        <view class="curpage-all">
+          <view class="all-select" bindtap="chooseCurPage">
+            本页全选
+            <icon type="{{curPageAll ? 'success' : 'circle'}}" size="16" color="{{curPageAll ? '#018389' : '#999'}}" class="select-icon" />
+          </view>
+          <view class="all-select" bindtap="chooseAll">
+            全部全选
+            <icon type="{{all ? 'success' : 'circle'}}" size="16" color="{{all ? '#018389' : '#999'}}" class="select-icon" />
+          </view>
+        </view>
+      </view>
+      <view class="right-box" bindtap="nextStep">下一步</view>
+    </view>
+  </view>
+
+</view>
